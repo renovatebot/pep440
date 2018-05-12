@@ -1,0 +1,40 @@
+{
+  "name": "pep440",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renovatebot/pep440.git"
+  },
+  "keywords": [
+    "pep440"
+  ],
+  "author": "Ayoub Kaanich",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/renovatebot/pep440/issues"
+  },
+  "homepage": "https://github.com/renovatebot/pep440#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "jest": "^22.4.3"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text-summary"
+    ]
+  }
+}
