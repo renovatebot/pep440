@@ -1,6 +1,6 @@
 
 // This list must be in the correct sorting order
-module.exports.VERSIONS = [
+const VERSIONS = [
     // Implicit epoch of 0
     "1.0.dev456", "1.0a1", "1.0a2.dev456", "1.0a12.dev456", "1.0a12",
     "1.0b1.dev456", "1.0b2", "1.0b2.post345.dev456", "1.0b2.post345",
@@ -18,7 +18,7 @@ module.exports.VERSIONS = [
     "1!1.2+1234.abc", "1!1.2+123456", "1!1.2.r32+123456", "1!1.2.rev33+123456",
 ];
 
-module.exports.INVALID_VERSIONS = [
+const INVALID_VERSIONS = [
     // Non sensical versions should be invalid
     "french toast",
 
@@ -38,3 +38,13 @@ module.exports.INVALID_VERSIONS = [
     undefined,
     () => true,
 ];
+
+module.exports = {
+    VERSIONS,
+    INVALID_VERSIONS,
+    cross,
+}
+
+function cross(array, fn) {
+    return [].concat(...array.map(fn));
+}

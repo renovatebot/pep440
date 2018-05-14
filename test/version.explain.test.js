@@ -2,7 +2,7 @@ const {
     valid,
     clean,
     explain,
-} = require('../');
+} = require('../lib/version');
 
 const {INVALID_VERSIONS} = require('./fixture');
 

@@ -1,15 +1,15 @@
-
 /* 
 This file is dual licensed under the terms of the Apache License, Version
 2.0, and the BSD License. See the LICENSE file in the root of this repository
 for complete details.
 */
 
-const pep440 = require('../');
 const {
     valid,
     clean,
-} = pep440;
+} = require('../lib/version');
+
+const operator = require('../lib/operator');
 
 const {
     VERSIONS,
@@ -166,71 +166,6 @@ describe('clean(version)', () => {
         const [version, normalized] = tuple;
         it(`normalizes ${JSON.stringify(version)} to ${JSON.stringify(normalized)}`, () => {
             expect(clean(version)).toEqual(normalized);
-        });
-    });
-
-});
-
-describe('compare(version, other)', () => {
-
-    const operator = {
-        lt: { symbol: '<', fn: pep440.lt },
-        le: { symbol: '<=', fn: pep440.le },
-        eq: { symbol: '==', fn: pep440.eq },
-        ne: { symbol: '!=', fn: pep440.ne },
-        ge: { symbol: '>=', fn: pep440.ge },
-        gt: { symbol: '>', fn: pep440.gt },
-    };
-
-    function cross(array, fn) {
-        return [].concat(...array.map(fn));
-    }
-
-    // Below we'll generate every possible combination of VERSIONS that
-    // should be true/false for the given operator
-    [
-        ...cross(VERSIONS, (left, i) =>
-            cross(VERSIONS.slice(i + 1), right => [
-                [left, right, operator.lt, true],
-                [left, right, operator.ge, false],
-            ])
-        ),
-
-        ...cross(VERSIONS, (left, i) =>
-            cross(VERSIONS.slice(i), right => [
-                [left, right, operator.le, true],
-                [left, right, operator.gt, false],
-            ])
-        ),
-
-        ...cross(VERSIONS, (version) => [
-            [version, version, operator.eq, true],
-            [version, version, operator.ne, false],
-        ]),
-
-        ...cross(VERSIONS, (left, i) =>
-            cross(VERSIONS.filter(right => right !== left), right => [
-                [left, right, operator.ne, true],
-                [left, right, operator.eq, false],
-            ])
-        ),
-
-        ...cross(VERSIONS, (left, i) =>
-            cross(VERSIONS.slice(0, i + 1), right => [
-                [left, right, operator.ge, true],
-                [left, right, operator.lt, false],
-            ])
-        ),
-
-        ...cross(VERSIONS, (left, i) =>
-            cross(VERSIONS.slice(0, i), right => [
-                [left, right, operator.gt, true],
-                [left, right, operator.le, false],
-            ])
-        ),
-    ].forEach(([left, right, op, expected]) => {
-        it(`returns ${expected} for '${left}' ${op.symbol} '${right}'`, () => {
-            expect(op.fn(left, right)).toBe(expected);
         });
     });
 
