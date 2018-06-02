@@ -1,7 +1,7 @@
 {
   "name": "pep440",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "PEP440 implementation in JavaScript",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -36,6 +36,10 @@
       "lcov",
       "text-summary"
     ]
+  },
+  "files": {
+    "index.js",
+    "lib"
   },
   "dependencies": {
     "xregexp": "^4.1.1"
