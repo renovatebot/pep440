@@ -17,7 +17,10 @@ const {
     rcompare,
 } = require('./lib/operator');
 
-const {satisfies} = require('./lib/specifier');
+const {
+    satisfies,
+    validRange,
+} = require('./lib/specifier');
 
 module.exports = {
     // version
@@ -40,4 +43,5 @@ module.exports = {
     
     // range
     satisfies,
+    validRange,
 };
