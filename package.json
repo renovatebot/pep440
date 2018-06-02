@@ -37,10 +37,10 @@
       "text-summary"
     ]
   },
-  "files": {
+  "files": [
     "index.js",
     "lib"
-  },
+  ],
   "dependencies": {
     "xregexp": "^4.1.1"
   }
