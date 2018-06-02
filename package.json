@@ -36,5 +36,8 @@
       "lcov",
       "text-summary"
     ]
+  },
+  "dependencies": {
+    "xregexp": "^4.1.1"
   }
 }
