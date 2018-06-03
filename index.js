@@ -22,6 +22,12 @@ const {
     validRange,
 } = require('./lib/specifier');
 
+const {
+  major,
+  minor,
+  patch,
+} = require('./lib/semantic');
+
 module.exports = {
     // version
     valid,
@@ -40,8 +46,13 @@ module.exports = {
     gt,
     compare,
     rcompare,
-    
+
     // range
     satisfies,
     validRange,
+
+    // semantic
+    major,
+    minor,
+    patch,
 };
