@@ -30,7 +30,7 @@ describe('compare(version, other)', () => {
             [version, '!=', version, false],
         ]),
 
-        ...cross(VERSIONS, (left, i) =>
+        ...cross(VERSIONS, (left) =>
             cross(VERSIONS.filter(right => right !== left), right => [
                 [left, '!=', right, true],
                 [left, '==', right, false],

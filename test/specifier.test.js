@@ -3,6 +3,7 @@ const { cross } = require('./fixture');
 
 const {
     parse,
+    validRange,
     satisfies,
     filter,
 } = require('../lib/specifier');
@@ -60,11 +61,13 @@ describe('parse(range)', () => {
     SPECIFIERS.forEach(range => {
         it('returns parsed for ' + JSON.stringify(range), () => {
             expect(parse(range)).not.toBe(null);
+            expect(validRange(range)).toBe(true);
         });
     });
     INVALID_SPECIFIERS.forEach(range => {
         it('returns null for ' + JSON.stringify(range), () => {
             expect(parse(range)).toBe(null);
+            expect(validRange(range)).toBe(false);
         });
     });
 
