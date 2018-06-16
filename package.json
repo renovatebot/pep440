@@ -1,6 +1,6 @@
 {
   "name": "@renovate/pep440",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "PEP440 implementation in JavaScript",
   "main": "index.js",
   "scripts": {
