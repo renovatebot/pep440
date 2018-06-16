@@ -20,6 +20,8 @@ const {
 const {
     satisfies,
     validRange,
+    maxSatisfying,
+    minSatisfying,
 } = require('./lib/specifier');
 
 const {
@@ -49,6 +51,8 @@ module.exports = {
 
     // range
     satisfies,
+    maxSatisfying,
+    minSatisfying,
     validRange,
 
     // semantic
