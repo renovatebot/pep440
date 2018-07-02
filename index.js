@@ -28,6 +28,7 @@ const {
   major,
   minor,
   patch,
+  inc,
 } = require('./lib/semantic');
 
 module.exports = {
@@ -59,4 +60,5 @@ module.exports = {
     major,
     minor,
     patch,
+    inc,
 };
