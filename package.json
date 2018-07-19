@@ -4,8 +4,8 @@
   "description": "PEP440 implementation in JavaScript",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint lib test",
-    "test": "jest"
+    "lint": "eslint lib test index.js",
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/renovatebot/pep440#readme",
   "devDependencies": {
+    "codecov": "3.0.4",
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-prettier": "2.9.0",
