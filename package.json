@@ -4,6 +4,7 @@
   "description": "PEP440 implementation in JavaScript",
   "main": "index.js",
   "scripts": {
+    "codecov": "codecov",
     "lint": "eslint lib test index.js",
     "jest": "jest"
   },
