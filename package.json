@@ -31,7 +31,8 @@
     "eslint-plugin-import": "2.13.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-promise": "3.8.0",
-    "jest": "23.4.1"
+    "jest": "23.4.1",
+    "prettier": "1.14.0"
   },
   "jest": {
     "coverageDirectory": "./coverage",
