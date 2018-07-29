@@ -7,7 +7,7 @@
     "prettier": "prettier \"**/*.{js,json,md}\" --write",
     "codecov": "codecov",
     "lint": "eslint lib test index.js",
-    "jest": "jest",
+    "jest": "jest --env=node",
     "test": "npm run prettier --list-different && npm run lint && npm run jest"
   },
   "repository": {
