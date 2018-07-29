@@ -1,5 +1,4 @@
-
-const { cross } = require('./fixture');
+const { cross } = require("./fixture");
 
 const {
   parse,
@@ -7,12 +6,20 @@ const {
   satisfies,
   maxSatisfying,
   minSatisfying,
-  filter,
-} = require('../lib/specifier');
+  filter
+} = require("../lib/specifier");
 
 const SPECIFIERS = [
-  "~=2.0", "==2.1.*", "==2.1.0.3", "!=2.2.*", "!=2.2.0.5", "<=5", ">=7.9a1",
-  "<1.0.dev1", ">2.0.post1", "===lolwat",
+  "~=2.0",
+  "==2.1.*",
+  "==2.1.0.3",
+  "!=2.2.*",
+  "!=2.2.0.5",
+  "<=5",
+  ">=7.9a1",
+  "<1.0.dev1",
+  ">2.0.post1",
+  "===lolwat"
 ];
 
 const INVALID_SPECIFIERS = [
@@ -56,23 +63,22 @@ const INVALID_SPECIFIERS = [
 
   // Cannot use a prefix matching after a .devN version
   "==1.0.dev1.*",
-  "!=1.0.dev1.*",
+  "!=1.0.dev1.*"
 ];
 
-describe('parse(range)', () => {
+describe("parse(range)", () => {
   SPECIFIERS.forEach(range => {
-    it('returns parsed for ' + JSON.stringify(range), () => {
+    it("returns parsed for " + JSON.stringify(range), () => {
       expect(parse(range)).not.toBe(null);
       expect(validRange(range)).toBe(true);
     });
   });
   INVALID_SPECIFIERS.forEach(range => {
-    it('returns null for ' + JSON.stringify(range), () => {
+    it("returns null for " + JSON.stringify(range), () => {
       expect(parse(range)).toBe(null);
       expect(validRange(range)).toBe(false);
     });
   });
-
 
   [
     // Various development release incarnations
@@ -188,37 +194,35 @@ describe('parse(range)', () => {
 
     // Various other normalizations
     "v1.0",
-    "  \r \f \v v1.0\t\n",
+    "  \r \f \v v1.0\t\n"
   ].forEach(version => {
-    it('normalizes ' + JSON.stringify(version), () => {
+    it("normalizes " + JSON.stringify(version), () => {
       const ops = ["==", "!="];
       if (!version.includes("+")) {
         ops.push("~=", "<=", ">=", "<", ">");
       }
-      ops.forEach((op) => {
+      ops.forEach(op => {
         expect(parse(op + version)).not.toBe(null);
       });
     });
   });
-
 });
 
-describe('parse(range).length', () => {
+describe("parse(range).length", () => {
   [
     ["", 0],
     ["==2.0", 1],
     [">=2.0", 1],
     [">=2.0,<3", 2],
-    [">=2.0,<3,==2.4", 3],
+    [">=2.0,<3,==2.4", 3]
   ].forEach(([range, length]) => {
-    it('returns should be ' + length + ' for ' + JSON.stringify(range), () => {
+    it("returns should be " + length + " for " + JSON.stringify(range), () => {
       expect(parse(range).length).toBe(length);
     });
-  })
+  });
 });
 
-describe('satisfies(version, specifier)', () => {
-
+describe("satisfies(version, specifier)", () => {
   [
     ...[
       // Test the equality operation
@@ -313,7 +317,7 @@ describe('satisfies(version, specifier)', () => {
       ["2!1.0", ">2.0"],
 
       // Test some normalization rules
-      ["2.0.5", ">2.0dev"],
+      ["2.0.5", ">2.0dev"]
     ].map(([version, spec]) => [version, spec, true]),
     ...[
       // Test the equality operation
@@ -410,7 +414,7 @@ describe('satisfies(version, specifier)', () => {
       ["1.0", "==2!1.0"],
       ["2!1.0", "==1.*"],
       ["1.0", "==2!1.*"],
-      ["2!1.0", "!=2!1.0"],
+      ["2!1.0", "!=2!1.0"]
     ].map(([version, spec]) => [version, spec, false]),
 
     ...[
@@ -420,41 +424,43 @@ describe('satisfies(version, specifier)', () => {
       ["1.0", "===1.0", true],
       ["nope", "===lolwat", false],
       ["1.0.0", "===1.0", false],
-      ["1.0.dev0", "===1.0.dev0", true],
+      ["1.0.dev0", "===1.0.dev0", true]
     ]
-
   ].forEach(([version, spec, expected]) => {
-    it(`returns ${expected} for ${JSON.stringify(version)} satisfies ${JSON.stringify(spec)}`, () => {
-
+    it(`returns ${expected} for ${JSON.stringify(
+      version
+    )} satisfies ${JSON.stringify(spec)}`, () => {
       expect(satisfies(version, spec, { prereleases: true })).toBe(expected);
-
     });
   });
 });
 
-describe('satisfies([versions], specifier, {prereleases})', () => {
-
-  cross([
-    [">=1.0", "2.0.dev1", false],
-    [">=2.0.dev1", "2.0a1", true],
-    ["==2.0.*", "2.0a1.dev1", false],
-    ["==2.0a1.*", "2.0a1.dev1", true],
-    ["<=2.0", "1.0.dev1", false],
-    ["<=2.0.dev1", "1.0a1", true],
-  ], ([spec, version, result]) => [
-    [spec, version, undefined, result],
-    [spec, version, !result, !result],
-  ]).forEach(([spec, version, prereleases, expected]) => {
-    it(`returns ${expected} for ${JSON.stringify(version)} satisfies ${JSON.stringify(spec)} when prereleases=${prereleases}`, () => {
-
+describe("satisfies([versions], specifier, {prereleases})", () => {
+  cross(
+    [
+      [">=1.0", "2.0.dev1", false],
+      [">=2.0.dev1", "2.0a1", true],
+      ["==2.0.*", "2.0a1.dev1", false],
+      ["==2.0a1.*", "2.0a1.dev1", true],
+      ["<=2.0", "1.0.dev1", false],
+      ["<=2.0.dev1", "1.0a1", true]
+    ],
+    ([spec, version, result]) => [
+      [spec, version, undefined, result],
+      [spec, version, !result, !result]
+    ]
+  ).forEach(([spec, version, prereleases, expected]) => {
+    it(`returns ${expected} for ${JSON.stringify(
+      version
+    )} satisfies ${JSON.stringify(
+      spec
+    )} when prereleases=${prereleases}`, () => {
       expect(satisfies(version, spec, { prereleases })).toBe(expected);
-
     });
   });
 });
 
-describe('filter([versions], specifier, {prereleases})', () => {
-
+describe("filter([versions], specifier, {prereleases})", () => {
   [
     // General test of the filter method
     ["", undefined, ["1.0", "2.0a1"], ["1.0"]],
@@ -478,19 +484,18 @@ describe('filter([versions], specifier, {prereleases})', () => {
 
     // Those are not of the original python implimentation
     // but were required for full coverage
-    ["wrong range", false, ["1.0"], []],
-
-
+    ["wrong range", false, ["1.0"], []]
   ].forEach(([spec, prereleases, versions, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(versions)} filter ${JSON.stringify(spec)} when prereleases=${prereleases}`, () => {
-
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
+      versions
+    )} filter ${JSON.stringify(spec)} when prereleases=${prereleases}`, () => {
       const args = [versions, spec, { prereleases }];
       const filtered = filter(...args);
       expect(filtered).toEqual(expected);
       expect(minSatisfying(...args)).toEqual(filtered[0] || null);
-      expect(maxSatisfying(...args)).toEqual(filtered[filtered.length - 1] || null);
-
+      expect(maxSatisfying(...args)).toEqual(
+        filtered[filtered.length - 1] || null
+      );
     });
   });
-
 });
