@@ -329,9 +329,9 @@ describe('inc(version, release)', () => {
     ['not_valid', 'major', undefined, null],
     ['1.0.0', 'invalid_release', undefined, null],
 
-    [`0.0.0`, `premajor`, `alpha`, null],
+    [`0.0.0`, `premajor`, `foo`, null],
     [`0.0.0`, `premajor`, 1, null],
-    [`1.0.0a0`, `premajor`, `alpha`, null]
+    [`1.0.0a0`, `premajor`, `bar`, null]
   ];
 
   invalidCases.forEach(testCase =>
