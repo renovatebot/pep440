@@ -1,6 +1,6 @@
 {
   "name": "@renovate/pep440",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "PEP440 implementation in JavaScript",
   "main": "index.js",
   "scripts": {
@@ -51,6 +51,6 @@
     "lib"
   ],
   "dependencies": {
-    "xregexp": "^4.1.1"
+    "xregexp": "4.2.0"
   }
 }
