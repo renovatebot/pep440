@@ -1,4 +1,5 @@
 {
-  "extends": ["config:base", "group:linters", ":automergeMinor", ":automergeBranch"],
+  "extends": ["config:base", "group:linters", ":automergeMinor"],
+  "automergeType": "branch",
   "rangeStrategy": "lockfile-update"
 }
