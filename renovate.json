@@ -1,4 +1,4 @@
 {
-  "extends": ["config:base", "group:linters"],
+  "extends": ["config:base", "group:linters", ":automergeMinor"],
   "rangeStrategy": "lockfile-update"
 }
