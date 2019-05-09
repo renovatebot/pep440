@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/renovatebot/pep440#readme",
   "devDependencies": {
-    "codecov": "3.3.0",
+    "codecov": "3.4.0",
     "eslint": "5.16.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "4.2.0",
