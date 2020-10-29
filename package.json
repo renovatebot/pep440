@@ -51,6 +51,6 @@
     "lib"
   ],
   "dependencies": {
-    "xregexp": "4.3.0"
+    "xregexp": "4.4.0"
   }
 }
