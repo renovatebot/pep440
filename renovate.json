@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base", "group:linters", ":automergeMinor"],
+  "extends": ["github>renovatebot/presets-internal:node"],
   "automergeType": "branch",
   "requiredStatusChecks": null,
   "rangeStrategy": "lockfile-update"
