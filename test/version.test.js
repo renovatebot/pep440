@@ -9,13 +9,13 @@ const { valid, clean } = require("../lib/version");
 const { VERSIONS, INVALID_VERSIONS } = require("./fixture");
 
 describe("valid(version)", () => {
-  VERSIONS.forEach(version => {
+  VERSIONS.forEach((version) => {
     it("returns valid for " + JSON.stringify(version), () => {
       expect(valid(version)).toEqual(version);
     });
   });
 
-  INVALID_VERSIONS.forEach(version => {
+  INVALID_VERSIONS.forEach((version) => {
     it("returns null for " + JSON.stringify(version), () => {
       expect(valid(version)).toBe(null);
     });
@@ -23,7 +23,7 @@ describe("valid(version)", () => {
 });
 
 describe("clean(version)", () => {
-  INVALID_VERSIONS.forEach(version => {
+  INVALID_VERSIONS.forEach((version) => {
     it("returns null for " + JSON.stringify(version), () => {
       expect(clean(version)).toBe(null);
     });
@@ -150,8 +150,8 @@ describe("clean(version)", () => {
     // Various other normalizations
     ["v1.0", "1.0"],
     ["   v1.0\t\n", "1.0"],
-    ["1.0c1", "1.0rc1"]
-  ].forEach(tuple => {
+    ["1.0c1", "1.0rc1"],
+  ].forEach((tuple) => {
     const [version, normalized] = tuple;
     it(`normalizes ${JSON.stringify(version)} to ${JSON.stringify(
       normalized

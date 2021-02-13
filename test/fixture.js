@@ -56,7 +56,7 @@ const VERSIONS = [
   "1!1.2+1234.abc",
   "1!1.2+123456",
   "1!1.2.r32+123456",
-  "1!1.2.rev33+123456"
+  "1!1.2.rev33+123456",
 ];
 
 const INVALID_VERSIONS = [
@@ -77,13 +77,13 @@ const INVALID_VERSIONS = [
   [],
   null,
   undefined,
-  () => true
+  () => true,
 ];
 
 module.exports = {
   VERSIONS,
   INVALID_VERSIONS,
-  cross
+  cross,
 };
 
 function cross(array, fn) {

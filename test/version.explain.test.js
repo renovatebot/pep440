@@ -3,7 +3,7 @@ const { explain } = require("../lib/version");
 const { INVALID_VERSIONS } = require("./fixture");
 
 describe("explain(version)", () => {
-  INVALID_VERSIONS.forEach(version => {
+  INVALID_VERSIONS.forEach((version) => {
     it("returns null for " + JSON.stringify(version), () => {
       expect(explain(version)).toBe(null);
     });
@@ -40,7 +40,7 @@ describe("explain(version).public", () => {
     ["1!1.0a1.post5+deadbeef", "1!1.0a1.post5"],
     ["1!1.0a1.post5.dev6+deadbeef", "1!1.0a1.post5.dev6"],
     ["1!1.0rc4+deadbeef", "1!1.0rc4"],
-    ["1!1.0.post5+deadbeef", "1!1.0.post5"]
+    ["1!1.0.post5+deadbeef", "1!1.0.post5"],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -80,7 +80,7 @@ describe("explain(version).base_version", () => {
     ["1!1.0a1.post5+deadbeef", "1!1.0"],
     ["1!1.0a1.post5.dev6+deadbeef", "1!1.0"],
     ["1!1.0rc4+deadbeef", "1!1.0"],
-    ["1!1.0.post5+deadbeef", "1!1.0"]
+    ["1!1.0.post5+deadbeef", "1!1.0"],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -120,7 +120,7 @@ describe("explain(version).epoch", () => {
     ["1!1.0a1.post5+deadbeef", 1],
     ["1!1.0a1.post5.dev6+deadbeef", 1],
     ["1!1.0rc4+deadbeef", 1],
-    ["1!1.0.post5+deadbeef", 1]
+    ["1!1.0.post5+deadbeef", 1],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -160,7 +160,7 @@ describe("explain(version).release", () => {
     ["1!1.0a1.post5+deadbeef", [1, 0]],
     ["1!1.0a1.post5.dev6+deadbeef", [1, 0]],
     ["1!1.0rc4+deadbeef", [1, 0]],
-    ["1!1.0.post5+deadbeef", [1, 0]]
+    ["1!1.0.post5+deadbeef", [1, 0]],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -200,7 +200,7 @@ describe("explain(version).local", () => {
     ["1!1.0a1.post5+deadbeef", "deadbeef"],
     ["1!1.0a1.post5.dev6+deadbeef", "deadbeef"],
     ["1!1.0rc4+deadbeef", "deadbeef"],
-    ["1!1.0.post5+deadbeef", "deadbeef"]
+    ["1!1.0.post5+deadbeef", "deadbeef"],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -240,7 +240,7 @@ describe("explain(version).pre", () => {
     ["1!1.0a1.post5+deadbeef", ["a", 1]],
     ["1!1.0a1.post5.dev6+deadbeef", ["a", 1]],
     ["1!1.0rc4+deadbeef", ["rc", 4]],
-    ["1!1.0.post5+deadbeef", null]
+    ["1!1.0.post5+deadbeef", null],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -273,7 +273,7 @@ describe("explain(version).is_prerelease", () => {
     ["1.0", false],
     ["1.0+dev", false],
     ["1.0.post1", false],
-    ["1.0.post1+dev", false]
+    ["1.0.post1+dev", false],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -313,7 +313,7 @@ describe("explain(version).dev", () => {
     ["1!1.0a1.post5+deadbeef", null],
     ["1!1.0a1.post5.dev6+deadbeef", 6],
     ["1!1.0rc4+deadbeef", null],
-    ["1!1.0.post5+deadbeef", null]
+    ["1!1.0.post5+deadbeef", null],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -353,7 +353,7 @@ describe("explain(version).is_devrelease", () => {
     ["1!1.0a1.post5+deadbeef", false],
     ["1!1.0a1.post5.dev6+deadbeef", true],
     ["1!1.0rc4+deadbeef", false],
-    ["1!1.0.post5+deadbeef", false]
+    ["1!1.0.post5+deadbeef", false],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -393,7 +393,7 @@ describe("explain(version).post", () => {
     ["1!1.0a1.post5+deadbeef", 5],
     ["1!1.0a1.post5.dev6+deadbeef", 5],
     ["1!1.0rc4+deadbeef", null],
-    ["1!1.0.post5+deadbeef", 5]
+    ["1!1.0.post5+deadbeef", 5],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
@@ -409,7 +409,7 @@ describe("explain(version).is_postrelease", () => {
     ["1.0", false],
     ["1.0+foo", false],
     ["1.0.post1.dev1", true],
-    ["1.0.post1", true]
+    ["1.0.post1", true],
   ].forEach(([version, expected]) => {
     it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
       version
