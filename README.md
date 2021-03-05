@@ -1,3 +1,5 @@
+![build](https://github.com/renovatebot/pep440/workflows/build/badge.svg)
+
 # pep440
 
 Python PEP440 implementation in JavaScript.
