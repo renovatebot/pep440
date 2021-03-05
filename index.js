@@ -6,7 +6,7 @@ const {
   satisfies,
   validRange,
   maxSatisfying,
-  minSatisfying
+  minSatisfying,
 } = require("./lib/specifier");
 
 const { major, minor, patch, inc } = require("./lib/semantic");
@@ -40,5 +40,5 @@ module.exports = {
   major,
   minor,
   patch,
-  inc
+  inc,
 };

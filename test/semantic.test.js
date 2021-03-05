@@ -301,23 +301,19 @@ describe("inc(version, release)", () => {
 
     ["1.0.0a0.post1.dev1", "prerelease", undefined, "1.0.0a1"],
     ["1.0.0b0.post1.dev1", "prerelease", undefined, "1.0.0b1"],
-    ["1.0.0rc0.post1.dev1", "prerelease", undefined, "1.0.0rc1"]
+    ["1.0.0rc0.post1.dev1", "prerelease", undefined, "1.0.0rc1"],
   ];
 
-  testCases.forEach(testCase =>
-    it(`handles incrementing ${testCase[0]} using ${testCase[1]} to ${
-      testCase[3]
-    }`, () =>
+  testCases.forEach((testCase) =>
+    it(`handles incrementing ${testCase[0]} using ${testCase[1]} to ${testCase[3]}`, () =>
       expect(inc(testCase[0], testCase[1], testCase[2])).toBe(testCase[3]))
   );
 
-  testCases.forEach(testCase => {
+  testCases.forEach((testCase) => {
     const epochTestCase = testCase;
     epochTestCase[0] = `1!${epochTestCase[0]}`;
     epochTestCase[3] = `1!${epochTestCase[3]}`;
-    it(`handles incrementing ${epochTestCase[0]} using ${epochTestCase[1]} to ${
-      epochTestCase[3]
-    }`, () =>
+    it(`handles incrementing ${epochTestCase[0]} using ${epochTestCase[1]} to ${epochTestCase[3]}`, () =>
       expect(inc(epochTestCase[0], epochTestCase[1], epochTestCase[2])).toBe(
         epochTestCase[3]
       ));
@@ -330,13 +326,11 @@ describe("inc(version, release)", () => {
 
     [`0.0.0`, `premajor`, `foo`, null],
     [`0.0.0`, `premajor`, 1, null],
-    [`1.0.0a0`, `premajor`, `bar`, null]
+    [`1.0.0a0`, `premajor`, `bar`, null],
   ];
 
-  invalidCases.forEach(testCase =>
-    it(`handles incrementing ${testCase[0]} using ${testCase[1]} to ${
-      testCase[3]
-    }`, () =>
+  invalidCases.forEach((testCase) =>
+    it(`handles incrementing ${testCase[0]} using ${testCase[1]} to ${testCase[3]}`, () =>
       expect(inc(testCase[0], testCase[1], testCase[2])).toBe(testCase[3]))
   );
 });
