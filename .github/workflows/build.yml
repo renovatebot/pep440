@@ -1,0 +1,56 @@
+name: build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+env:
+  YARN_MODULES_CACHE_KEY: v1
+  YARN_PACKAGE_CACHE_KEY: v1
+  YARN_CACHE_FOLDER: .cache/yarn
+  NODE_VERSION: 14
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    # tests shouldn't need more time
+    timeout-minutes: 30
+
+    steps:
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Init platform
+        shell: bash
+        run: |
+          echo "Node $(node --version)"
+          echo "Yarn $(yarn --version)"
+
+      - uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 2
+
+      - name: Cache Yarn packages
+        id: yarn_cache_packages
+        uses: actions/cache@v2.1.4
+        with:
+          path: ${{ env.YARN_CACHE_FOLDER }}
+          key: ${{ env.YARN_PACKAGE_CACHE_KEY }}-${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ env.YARN_PACKAGE_CACHE_KEY }}-${{ runner.os }}-yarn_cache-
+
+      # Clear caches on cache miss, otherwise they will grow indefinitely
+      - name: Clear yarn cache
+        if: steps.yarn_cache_packages.outputs.cache-hit != 'true'
+        run: yarn cache clean
+
+      - name: Installing dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run tests
+        run: yarn test
