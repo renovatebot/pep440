@@ -1,4 +1,4 @@
-const { major, minor, patch, inc } = require("../");
+const { major, minor, patch, inc } = require("..");
 
 describe("major(version)", () => {
   it("returns correct value", () => {
