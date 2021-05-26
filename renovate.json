@@ -1,6 +1,3 @@
 {
-  "extends": ["github>renovatebot/presets-internal:node"],
-  "automergeType": "branch",
-  "requiredStatusChecks": null,
-  "rangeStrategy": "lockfile-update"
+  "extends": ["github>renovatebot/.github"]
 }
