@@ -31,13 +31,13 @@ jobs:
           echo "Node $(node --version)"
           echo "Yarn $(yarn --version)"
 
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2.3.4
         with:
           fetch-depth: 2
 
       - name: Cache Yarn packages
         id: yarn_cache_packages
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # renovate: tag=v2.1.6
         with:
           path: ${{ env.YARN_CACHE_FOLDER }}
           key: ${{ env.YARN_PACKAGE_CACHE_KEY }}-${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
