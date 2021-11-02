@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "PEP440 implementation in JavaScript",
   "main": "index.js",
+  "types": "index.d.ts"
   "scripts": {
     "codecov": "codecov",
     "eslint": "eslint lib test index.js",
