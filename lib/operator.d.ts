@@ -1,0 +1,9 @@
+export declare function compare(version: string, other: string): number;
+export declare function rcompare(version: string, other: string): number;
+export declare function gt(version: string, other: string): boolean;
+export declare function eq(version: string, other: string): boolean;
+export declare function lt(version: string, other: string): boolean;
+export declare function ge(version: string, other: string): boolean;
+export declare function nq(version: string, other: string): boolean;
+export declare function le(version: string, other: string): boolean;
+export declare function arbitrary(version: string, other: string): boolean;
