@@ -3,7 +3,7 @@ export declare function valid(version: string): string | null;
 export declare function clean(version: string): string | null;
 export declare function stringify(version: string): string | null;
 
-interface parsed{
+interface parsed {
   public: string;
   base_version: string;
   is_prerelease: boolean;
@@ -18,8 +18,3 @@ interface parsed{
 }
 export declare function parse(version: string): parsed | null;
 export declare function explain(version: string): parsed | null;
-
-
-
-
-

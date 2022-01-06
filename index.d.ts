@@ -1,17 +1,17 @@
-import {SemVer} from "semver";
-interface parsed{
-    public: string;
-    base_version: string;
-    is_prerelease: boolean;
-    is_devrelease: boolean;
-    is_postrelease: boolean;
-    epoch: number;
-    release: number[];
-    pre: (string | number)[];
-    post: (string | number)[];
-    dev: (string | number)[];
-    local: string | null;
-  }
+import { SemVer } from "semver";
+interface parsed {
+  public: string;
+  base_version: string;
+  is_prerelease: boolean;
+  is_devrelease: boolean;
+  is_postrelease: boolean;
+  epoch: number;
+  release: number[];
+  pre: (string | number)[];
+  post: (string | number)[];
+  dev: (string | number)[];
+  local: string | null;
+}
 export declare function valid(version: string): string | null;
 export declare function clean(version: string): string | null;
 export declare function explain(version: string): parsed | null;
@@ -33,11 +33,19 @@ export declare function arbitrary(version: string, other: string): boolean;
 //range
 export function satisfies(version: string, specifier: string): boolean;
 export function validRange(specifier: string): boolean;
-export function maxSatisfying(version: string, specifier: string, options: parsed): string | null;
-export function minSatisfying(version: string, specifier: string, options: parsed): string | null;
+export function maxSatisfying(
+  version: string,
+  specifier: string,
+  options: parsed
+): string | null;
+export function minSatisfying(
+  version: string,
+  specifier: string,
+  options: parsed
+): string | null;
 
 //semantic
 export declare function major(input: string | SemVer): number;
-export declare function  minor(input: string | SemVer): number;
-export declare function  patch(input: string | SemVer): number;
-export declare function  inc(input: string | SemVer): string | null;
+export declare function minor(input: string | SemVer): number;
+export declare function patch(input: string | SemVer): number;
+export declare function inc(input: string | SemVer): string | null;
