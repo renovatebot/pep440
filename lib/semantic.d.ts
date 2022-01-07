@@ -1,4 +1,4 @@
-import { SemanticFunctionType } from "./shared";
+import type { SemanticFunctionType } from "./shared";
 
 export declare function major(fn: SemanticFunctionType): number;
 export declare function minor(fn: SemanticFunctionType): number;
