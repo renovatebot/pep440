@@ -1,5 +1,6 @@
-import { SemVer } from "semver";
-export declare function major(input: string | SemVer): number;
-export declare function minor(input: string | SemVer): number;
-export declare function patch(input: string | SemVer): number;
-export declare function inc(input: string | SemVer): string | null;
+import { SemanticFunctionType } from "./shared";
+
+export declare function major(fn: SemanticFunctionType): number;
+export declare function minor(fn: SemanticFunctionType): number;
+export declare function patch(fn: SemanticFunctionType): number;
+export declare function inc(fn: SemanticFunctionType): string | null;
