@@ -25,16 +25,16 @@ export declare const RANGE_PATTERN: string;
  still I have used interface Range as its return type cause it is being used in the file
  lib/versioning/pep440/range.ts as so L52
   */
-export declare function parse(ranges: string): Range[]; // have doubts regarding this which need to be discussed
-export declare function filter(versions: string[], range: string): string[];
-export declare function satisfies(version: string, specifier: string): boolean;
-export declare function validRange(specifier: string): boolean;
-export declare function maxSatisfying(
+export function parse(ranges: string): Range[]; // have doubts regarding this which need to be discussed
+export function filter(versions: string[], range: string): string[];
+export function satisfies(version: string, specifier: string): boolean;
+export function validRange(specifier: string): boolean;
+export function maxSatisfying(
   version: string,
   specifier: string,
   options: parsed
 ): string | null;
-export declare function minSatisfying(
+export function minSatisfying(
   version: string,
   specifier: string,
   options: parsed

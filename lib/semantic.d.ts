@@ -1,6 +1,6 @@
 import type { SemanticFunctionType } from "./shared";
 
-export declare function major(fn: SemanticFunctionType): number;
-export declare function minor(fn: SemanticFunctionType): number;
-export declare function patch(fn: SemanticFunctionType): number;
-export declare function inc(fn: SemanticFunctionType): string | null;
+export function major(fn: SemanticFunctionType): number;
+export function minor(fn: SemanticFunctionType): number;
+export function patch(fn: SemanticFunctionType): number;
+export function inc(fn: SemanticFunctionType): string | null;

@@ -5,40 +5,40 @@ import type {
   VersionFunctionType,
 } from "./lib/shared";
 
-export declare function valid(fn: VersionFunctionType): string | null;
-export declare function clean(fn: VersionFunctionType): string | null;
-export declare function explain(fn: VersionFunctionType): parsed | null;
+export function valid(fn: VersionFunctionType): string | null;
+export function clean(fn: VersionFunctionType): string | null;
+export function explain(fn: VersionFunctionType): parsed | null;
 
 //operator
-export declare function compare(fn: OperatorFunctionType): number;
-export declare function rcompare(fn: OperatorFunctionType): number;
-export declare function gt(fn: OperatorFunctionType): boolean;
-export declare function eq(fn: OperatorFunctionType): boolean;
-export declare function lt(fn: OperatorFunctionType): boolean;
-export declare function ge(fn: OperatorFunctionType): boolean;
-export declare function nq(fn: OperatorFunctionType): boolean;
-export declare function gte(fn: OperatorFunctionType): boolean;
-export declare function neq(fn: OperatorFunctionType): boolean;
-export declare function le(fn: OperatorFunctionType): boolean;
-export declare function lte(fn: OperatorFunctionType): boolean;
-export declare function arbitrary(fn: OperatorFunctionType): boolean;
+export function compare(fn: OperatorFunctionType): number;
+export function rcompare(fn: OperatorFunctionType): number;
+export function gt(fn: OperatorFunctionType): boolean;
+export function eq(fn: OperatorFunctionType): boolean;
+export function lt(fn: OperatorFunctionType): boolean;
+export function ge(fn: OperatorFunctionType): boolean;
+export function nq(fn: OperatorFunctionType): boolean;
+export function gte(fn: OperatorFunctionType): boolean;
+export function neq(fn: OperatorFunctionType): boolean;
+export function le(fn: OperatorFunctionType): boolean;
+export function lte(fn: OperatorFunctionType): boolean;
+export function arbitrary(fn: OperatorFunctionType): boolean;
 
 //range
-export declare function satisfies(version: string, specifier: string): boolean;
-export declare function validRange(specifier: string): boolean;
-export declare function maxSatisfying(
+export function satisfies(version: string, specifier: string): boolean;
+export function validRange(specifier: string): boolean;
+export function maxSatisfying(
   version: string,
   specifier: string,
   options: parsed
 ): string | null;
-export declare function minSatisfying(
+export function minSatisfying(
   version: string,
   specifier: string,
   options: parsed
 ): string | null;
 
 //semantic
-export declare function major(fn: SemanticFunctionType): number;
-export declare function minor(fn: SemanticFunctionType): number;
-export declare function patch(fn: SemanticFunctionType): number;
-export declare function inc(fn: SemanticFunctionType): string | null;
+export function major(fn: SemanticFunctionType): number;
+export function minor(fn: SemanticFunctionType): number;
+export function patch(fn: SemanticFunctionType): number;
+export function inc(fn: SemanticFunctionType): string | null;
