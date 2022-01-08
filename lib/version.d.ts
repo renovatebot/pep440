@@ -1,4 +1,5 @@
 import type { VersionFunctionType, parsed } from "./shared";
+
 export declare const VERSION_PATTERN: string;
 export declare function valid(fn: VersionFunctionType): string | null;
 export declare function clean(fn: VersionFunctionType): string | null;

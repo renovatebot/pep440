@@ -1,4 +1,4 @@
-import { parsed, Range } from "./shared";
+import type { parsed, Range } from "./shared";
 
 export declare const RANGE_PATTERN: string;
 

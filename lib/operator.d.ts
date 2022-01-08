@@ -1,4 +1,4 @@
-import { OperatorFunctionType } from "./shared";
+import type { OperatorFunctionType } from "./shared";
 
 export declare function compare(fn: OperatorFunctionType): number;
 export declare function rcompare(fn: OperatorFunctionType): number;
