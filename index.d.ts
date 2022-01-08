@@ -24,14 +24,14 @@ export declare function lte(fn: OperatorFunctionType): boolean;
 export declare function arbitrary(fn: OperatorFunctionType): boolean;
 
 //range
-export function satisfies(version: string, specifier: string): boolean;
-export function validRange(specifier: string): boolean;
-export function maxSatisfying(
+export declare function satisfies(version: string, specifier: string): boolean;
+export declare function validRange(specifier: string): boolean;
+export declare function maxSatisfying(
   version: string,
   specifier: string,
   options: parsed
 ): string | null;
-export function minSatisfying(
+export declare function minSatisfying(
   version: string,
   specifier: string,
   options: parsed
