@@ -1,6 +1,6 @@
 import type { parsed, Range } from "./shared";
 
-export declare const RANGE_PATTERN: string;
+export const RANGE_PATTERN: string;
 
 /*
    parse function takes a string and returns an object that has the values of both th ebelow interfaces combined
