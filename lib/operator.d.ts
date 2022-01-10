@@ -1,11 +1,9 @@
-import type { OperatorFunctionType } from "./shared";
-
-export function compare(fn: OperatorFunctionType): number;
-export function rcompare(fn: OperatorFunctionType): number;
-export function gt(fn: OperatorFunctionType): boolean;
-export function eq(fn: OperatorFunctionType): boolean;
-export function lt(fn: OperatorFunctionType): boolean;
-export function ge(fn: OperatorFunctionType): boolean;
-export function nq(fn: OperatorFunctionType): boolean;
-export function le(fn: OperatorFunctionType): boolean;
-export function arbitrary(fn: OperatorFunctionType): boolean;
+export function compare(version: string, other: string): number;
+export function rcompare(version: string, other: string): number;
+export function gt(version: string, other: string): boolean;
+export function eq(version: string, other: string): boolean;
+export function lt(version: string, other: string): boolean;
+export function ge(version: string, other: string): boolean;
+export function nq(version: string, other: string): boolean;
+export function le(version: string, other: string): boolean;
+export function arbitrary(version: string, other: string): boolean;
