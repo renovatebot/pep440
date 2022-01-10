@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: yarn
+          cache-dependency-path: pep440/yarn.lock
 
       - name: Init platform
         shell: bash
