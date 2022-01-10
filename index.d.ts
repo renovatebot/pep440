@@ -1,9 +1,9 @@
-import { parsed } from "./lib/shared";
+import { Pep440Version } from "./lib/shared";
 import type { SemVer } from "semver";
 
 export function valid(version: string): string | null;
 export function clean(version: string): string | null;
-export function explain(version: string): parsed | null;
+export function explain(version: string): Pep440Version | null;
 
 //operator
 export function compare(version: string, other: string): number;
@@ -25,12 +25,12 @@ export function validRange(specifier: string): boolean;
 export function maxSatisfying(
   version: string,
   specifier: string,
-  options: parsed
+  options: Pep440Version
 ): string | null;
 export function minSatisfying(
   version: string,
   specifier: string,
-  options: parsed
+  options: Pep440Version
 ): string | null;
 
 //semantic

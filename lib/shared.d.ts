@@ -1,4 +1,4 @@
-export interface parsed {
+export interface Pep440Version {
   public: string;
   base_version: string;
   is_prerelease: boolean;

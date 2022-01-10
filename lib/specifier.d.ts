@@ -1,4 +1,4 @@
-import type { parsed, Range } from "./shared";
+import type { Pep440Version, Range } from "./shared";
 
 export const RANGE_PATTERN: string;
 
@@ -32,10 +32,10 @@ export function validRange(specifier: string): boolean;
 export function maxSatisfying(
   version: string,
   specifier: string,
-  options: parsed
+  options: Pep440Version
 ): string | null;
 export function minSatisfying(
   version: string,
   specifier: string,
-  options: parsed
+  options: Pep440Version
 ): string | null;
