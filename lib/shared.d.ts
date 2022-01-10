@@ -1,4 +1,3 @@
-import type { SemVer } from "semver";
 export interface parsed {
   public: string;
   base_version: string;
@@ -17,6 +16,3 @@ export interface Range {
   prefix: string;
   version: string;
 }
-export type VersionFunctionType = (version: string) => string | null;
-export type SemanticFunctionType = (input: string | SemVer) => number;
-export type OperatorFunctionType = (version: string, other: string) => number;
