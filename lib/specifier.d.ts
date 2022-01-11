@@ -4,12 +4,12 @@ export const RANGE_PATTERN: string;
 
 /*
    parse function takes a string and returns an object that has the values of both th ebelow interfaces combined
-  interface Range {
+  interface Pep440Constraint {
     operator: string;
     prefix: string;
     version: string;
   }
-  * interface parsed{
+  * interface Pep440Version{
   public: string;
   base_version: string;
   is_prerelease: boolean;
@@ -22,13 +22,10 @@ export const RANGE_PATTERN: string;
   dev: (string | number)[];
   local: string | null;
 }
- still I have used interface Range as its return type cause it is being used in the file
+ still I have used interface Pep440Constraint as its return type cause it is being used in the file
  lib/versioning/pep440/range.ts as so L52
   */
-export function parse(ranges: string): Pep440Constraint[]; // have doubts regarding this which need to be discussed
 export function filter(versions: string[], range: string): string[];
-export function satisfies(version: string, specifier: string): boolean;
-export function validRange(specifier: string): boolean;
 export function maxSatisfying(
   version: string,
   specifier: string,
@@ -39,3 +36,6 @@ export function minSatisfying(
   specifier: string,
   options: Pep440Version
 ): string | null;
+export function parse(ranges: string): Pep440Constraint[]; // have doubts regarding this which need to be discussed
+export function satisfies(version: string, specifier: string): boolean;
+export function validRange(specifier: string): boolean;
