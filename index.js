@@ -33,12 +33,12 @@ module.exports = {
   rcompare,
 
   // range
-  satisfies,
+  filter,
   maxSatisfying,
   minSatisfying,
-  validRange,
-  filter,
   RANGE_PATTERN,
+  satisfies,
+  validRange,
 
   // semantic
   major,
