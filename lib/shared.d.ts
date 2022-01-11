@@ -11,7 +11,7 @@ export interface Pep440Version {
   dev: (string | number)[];
   local: string | null;
 }
-export interface Range {
+export interface Pep440Constraint {
   operator: string;
   prefix: string;
   version: string;
