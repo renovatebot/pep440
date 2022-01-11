@@ -101,5 +101,5 @@ jobs:
         run: |
           npx semantic-release --dry-run ${{env.DRY_RUN}}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
