@@ -2,7 +2,6 @@ export type { Pep440Constraint, Pep440Version } from "./lib/shared";
 export { clean, explain, valid } from "./lib/version";
 
 export {
-  arbitrary,
   compare,
   eq,
   ge,
