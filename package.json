@@ -45,7 +45,7 @@
     ],
     "coverageReporters": [
       "json",
-      "lcov",
+      "html",
       "text-summary"
     ]
   },

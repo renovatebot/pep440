@@ -38,3 +38,7 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Codecov
+        uses: codecov/codecov-action@f32b3a3741e1053eb607407145bc9619351dc93b # renovate: tag=v2.1.0
+        if: always()
