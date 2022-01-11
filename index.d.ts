@@ -1,4 +1,4 @@
-import { Pep440Version } from "./lib/shared";
+import type { Pep440Version } from "./lib/shared";
 import type { SemVer } from "semver";
 
 export function valid(version: string): string | null;
