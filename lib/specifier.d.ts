@@ -1,4 +1,4 @@
-import type { parsed, Range } from "./shared";
+import type { Pep440Version, Pep440Constraint } from "./shared";
 
 export const RANGE_PATTERN: string;
 
@@ -25,17 +25,17 @@ export const RANGE_PATTERN: string;
  still I have used interface Range as its return type cause it is being used in the file
  lib/versioning/pep440/range.ts as so L52
   */
-export function parse(ranges: string): Range[]; // have doubts regarding this which need to be discussed
+export function parse(ranges: string): Pep440Constraint[]; // have doubts regarding this which need to be discussed
 export function filter(versions: string[], range: string): string[];
 export function satisfies(version: string, specifier: string): boolean;
 export function validRange(specifier: string): boolean;
 export function maxSatisfying(
   version: string,
   specifier: string,
-  options: parsed
+  options: Pep440Version
 ): string | null;
 export function minSatisfying(
   version: string,
   specifier: string,
-  options: parsed
+  options: Pep440Version
 ): string | null;
