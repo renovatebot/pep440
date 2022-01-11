@@ -55,8 +55,5 @@
     "index.js",
     "lib",
     "index.d.ts"
-  ],
-  "dependencies": {
-    "xregexp": "4.4.1"
-  }
+  ]
 }
