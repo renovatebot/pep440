@@ -1,3 +1,16 @@
 {
-  "extends": ["github>renovatebot/.github"]
+  "extends": ["github>renovatebot/.github"],
+  "semanticCommitScope": "deps",
+  "automergeType": "pr",
+  "prCreation": "immediate",
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["semantic-release"],
+      "semanticCommitType": "build"
+    }
+  ]
 }
