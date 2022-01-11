@@ -1,42 +1,28 @@
-import type { Pep440Constraint, Pep440Version } from "./lib/shared";
-import type { SemVer } from "semver";
-export { filter, RANGE_PATTERN } from "./lib/specifier";
-export type { Pep440Constraint, Pep440Version };
+export type { Pep440Constraint, Pep440Version } from "./lib/shared";
+export { clean, explain, valid } from "./lib/version";
 
-export function valid(version: string): string | null;
-export function clean(version: string): string | null;
-export function explain(version: string): Pep440Version | null;
+export {
+  arbitrary,
+  compare,
+  eq,
+  ge,
+  ge as gte,
+  gt,
+  le,
+  le as lte,
+  lt,
+  ne,
+  ne as neq,
+  rcompare,
+} from "./lib/operator";
 
-//operator
-export function compare(version: string, other: string): number;
-export function rcompare(version: string, other: string): number;
-export function gt(version: string, other: string): boolean;
-export function eq(version: string, other: string): boolean;
-export function lt(version: string, other: string): boolean;
-export function ge(version: string, other: string): boolean;
-export function nq(version: string, other: string): boolean;
-export function gte(version: string, other: string): boolean;
-export function neq(version: string, other: string): boolean;
-export function le(version: string, other: string): boolean;
-export function lte(version: string, other: string): boolean;
-export function arbitrary(version: string, other: string): boolean;
+export {
+  filter,
+  maxSatisfying,
+  minSatisfying,
+  RANGE_PATTERN,
+  satisfies,
+  validRange,
+} from "./lib/specifier";
 
-//range
-export function satisfies(version: string, specifier: string): boolean;
-export function validRange(specifier: string): boolean;
-export function maxSatisfying(
-  version: string,
-  specifier: string,
-  options: Pep440Version
-): string | null;
-export function minSatisfying(
-  version: string,
-  specifier: string,
-  options: Pep440Version
-): string | null;
-
-//semantic
-export function major(input: string | SemVer): number;
-export function minor(input: string | SemVer): number;
-export function patch(input: string | SemVer): number;
-export function inc(input: string | SemVer): string | null;
+export { major, minor, patch, inc } from "./lib/semantic";
