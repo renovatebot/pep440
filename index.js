@@ -3,10 +3,12 @@ const { valid, clean, explain } = require("./lib/version");
 const { lt, le, eq, ne, ge, gt, compare, rcompare } = require("./lib/operator");
 
 const {
-  satisfies,
-  validRange,
+  filter,
   maxSatisfying,
   minSatisfying,
+  RANGE_PATTERN,
+  satisfies,
+  validRange,
 } = require("./lib/specifier");
 
 const { major, minor, patch, inc } = require("./lib/semantic");
@@ -31,9 +33,11 @@ module.exports = {
   rcompare,
 
   // range
-  satisfies,
+  filter,
   maxSatisfying,
   minSatisfying,
+  RANGE_PATTERN,
+  satisfies,
   validRange,
 
   // semantic

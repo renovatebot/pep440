@@ -1,7 +1,8 @@
 import type { Pep440Constraint, Pep440Version } from "./lib/shared";
 import type { SemVer } from "semver";
-
+export { filter, RANGE_PATTERN } from "./lib/specifier";
 export type { Pep440Constraint, Pep440Version };
+
 export function valid(version: string): string | null;
 export function clean(version: string): string | null;
 export function explain(version: string): Pep440Version | null;
