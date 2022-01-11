@@ -1,4 +1,3 @@
-export function arbitrary(version: string, other: string): boolean;
 export function compare(version: string, other: string): number;
 export function eq(version: string, other: string): boolean;
 export function ge(version: string, other: string): boolean;
