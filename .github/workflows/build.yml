@@ -66,24 +66,24 @@ jobs:
       - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # renovate: tag=v2.4.0
         with:
           fetch-depth: 2
-          
+
       - name: Set up Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # renovate: tag=v2.5.1
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: yarn
 
-      - name: Init platform   
-          shell: bash
+      - name: Init platform
+        shell: bash
         run: |
           echo "Node $(node --version)"
           echo "Yarn $(yarn --version)"
-      
-       - name: Installing dependencies
-         run: yarn install --frozen-lockfile
-         
-       - name: Lint
-         run: |
+
+      - name: Installing dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: |
           yarn prettier
 
   release:
