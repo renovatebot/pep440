@@ -1,6 +1,8 @@
 import { parsed } from "./lib/shared";
 import type { SemVer } from "semver";
+import type { RANGE_PATTERN } from "./lib/specifier";
 
+export type { RANGE_PATTERN };
 export function valid(version: string): string | null;
 export function clean(version: string): string | null;
 export function explain(version: string): parsed | null;
