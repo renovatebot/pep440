@@ -1,3 +1,8 @@
+export interface Pep440Constraint {
+  operator: string;
+  prefix: string;
+  version: string;
+}
 export interface Pep440Version {
   public: string;
   base_version: string;
@@ -10,9 +15,4 @@ export interface Pep440Version {
   post: (string | number)[];
   dev: (string | number)[];
   local: string | null;
-}
-export interface Pep440Constraint {
-  operator: string;
-  prefix: string;
-  version: string;
 }
