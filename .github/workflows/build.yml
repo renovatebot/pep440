@@ -24,7 +24,6 @@ env:
 
 jobs:
   test:
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
     # tests shouldn't need more time
