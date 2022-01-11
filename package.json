@@ -57,6 +57,6 @@
     "index.d.ts"
   ],
   "dependencies": {
-    "xregexp": "4.4.1"
+    "xregexp": "5.1.0"
   }
 }
