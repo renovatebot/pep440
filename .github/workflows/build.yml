@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - test/lint
 
 env:
   NODE_VERSION: 14
