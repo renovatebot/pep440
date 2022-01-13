@@ -4,12 +4,12 @@ export const RANGE_PATTERN: string;
 
 export function filter(versions: string[], range: string): string[];
 export function maxSatisfying(
-  version: string,
+  versions: string[],
   specifier: string,
   options: Pep440Version
 ): string | null;
 export function minSatisfying(
-  version: string,
+  versions: string[],
   specifier: string,
   options: Pep440Version
 ): string | null;
