@@ -2,7 +2,11 @@ import type { Pep440Constraint, Pep440SpecifierOptions } from "./shared";
 
 export const RANGE_PATTERN: string;
 
-export function filter(versions: string[], range: string): string[];
+export function filter(
+  versions: string[],
+  specifier: string,
+  options: Pep440SpecifierOptions
+): string[];
 export function maxSatisfying(
   versions: string[],
   specifier: string,
