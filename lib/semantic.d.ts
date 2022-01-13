@@ -1,6 +1,4 @@
-import type { SemVer } from "semver";
-
-export function major(input: string | SemVer): number;
-export function minor(input: string | SemVer): number;
-export function patch(input: string | SemVer): number;
-export function inc(input: string | SemVer): string | null;
+export function inc(input: string): string | null;
+export function major(input: string): number;
+export function minor(input: string): number;
+export function patch(input: string): number;
