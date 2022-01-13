@@ -30,12 +30,12 @@ export function filter(versions: string[], range: string): string[];
 export function satisfies(version: string, specifier: string): boolean;
 export function validRange(specifier: string): boolean;
 export function maxSatisfying(
-  version: string,
+  versions: string[],
   specifier: string,
   options: Pep440Version
 ): string | null;
 export function minSatisfying(
-  version: string,
+  versions: string[],
   specifier: string,
   options: Pep440Version
 ): string | null;
