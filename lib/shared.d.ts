@@ -3,6 +3,10 @@ export interface Pep440Constraint {
   prefix: string;
   version: string;
 }
+export interface Pep440SpecifierOptions {
+  prereleases?: boolean;
+}
+
 export interface Pep440Version {
   public: string;
   base_version: string;
