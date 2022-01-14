@@ -1,6 +1,5 @@
 {
   "extends": ["github>renovatebot/.github"],
-  "semanticCommitScope": "deps",
   "automergeType": "pr",
   "prCreation": "immediate",
   "packageRules": [
