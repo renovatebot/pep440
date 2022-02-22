@@ -10,7 +10,8 @@
     "jest": "jest --env=node",
     "prettier": "prettier --check \"**/*.{ts,js,mjs,json,md}\"",
     "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
-    "test": "run-s prettier eslint jest"
+    "test": "run-s prettier eslint jest",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-promise": "6.0.0",
+    "husky": "^7.0.0",
     "jest": "27.4.7",
     "npm-run-all": "4.1.5",
     "prettier": "2.5.1",
@@ -59,5 +61,8 @@
     "index.js",
     "lib",
     "index.d.ts"
-  ]
+  ],
+  "dependencies": {
+    "pretty-quick": "3.1.3"
+  }
 }
