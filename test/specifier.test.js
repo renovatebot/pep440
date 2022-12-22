@@ -315,6 +315,8 @@ describe("satisfies(version, specifier)", () => {
       ["2!1.0", ">=2.0"],
       ["1.0", "<2!0.1"],
       ["2!1.0", ">2.0"],
+      ["3.10.0", "!=3.1.*"],
+      ["3.10.0", "==3.10.*"],
 
       // Test some normalization rules
       ["2.0.5", ">2.0dev"],
@@ -401,6 +403,8 @@ describe("satisfies(version, specifier)", () => {
       ["2.post1", "<2"],
       ["2.post1.dev1", "<2"],
       ["3", "<2"],
+      ["3.10.0", "==3.1.*"],
+      ["3.10.0", "!=3.10.*"],
 
       // Test the compatibility operation
       ["2.0", "~=1.0"],
