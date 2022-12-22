@@ -1,6 +1,6 @@
 {
   "name": "@renovatebot/pep440",
-  "version": "1.0.1",
+  "version": "0.0.0-semantic-release",
   "description": "PEP440 implementation in JavaScript",
   "main": "index.js",
   "scripts": {
