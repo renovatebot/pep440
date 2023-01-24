@@ -8,7 +8,7 @@ describe("major(version)", () => {
     expect(major("25!1.2.3")).toBe(1);
   });
   it("throws when version invalid", () => {
-    expect(() => major("not_version")).toThrowError(TypeError);
+    expect(() => major("not_version")).toThrow(TypeError);
   });
 });
 
@@ -20,7 +20,7 @@ describe("minor(version)", () => {
     expect(minor("1")).toBe(0);
   });
   it("throws when version invalid", () => {
-    expect(() => minor("not_version")).toThrowError(TypeError);
+    expect(() => minor("not_version")).toThrow(TypeError);
   });
 });
 
@@ -32,7 +32,7 @@ describe("patch(version)", () => {
     expect(patch("1.2")).toBe(0);
   });
   it("throws when version invalid", () => {
-    expect(() => patch("not_version")).toThrowError(TypeError);
+    expect(() => patch("not_version")).toThrow(TypeError);
   });
 });
 

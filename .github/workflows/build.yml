@@ -18,16 +18,30 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  GIT_EMAIL: bot+pep440@renovateapp.com
   DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-  NODE_VERSION: 14
+  NODE_VERSION: 18 # needs to be in sync with other v18 below
   DRY_RUN: true
 
 jobs:
   test:
+    name: ${{ matrix.node-version == 18 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
     runs-on: ubuntu-latest
 
     # tests shouldn't need more time
     timeout-minutes: 30
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [14, 16, 18]
+        # exclude:
+        #   - os: windows-latest
+        #     node-version: 12
+
+    env:
+      coverage: ${{ matrix.os == 'ubuntu-latest' && matrix.node-version == 18 }}
+      NODE_VERSION: ${{ matrix.node-version }}
 
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
@@ -43,21 +57,59 @@ jobs:
       - name: Init platform
         shell: bash
         run: |
-          echo "Node $(node --version)"
-          echo "Yarn $(yarn --version)"
+          git config --global core.autocrlf false
+          git config --global core.symlinks true
+          echo 'Node $(node --version)'
+          echo 'Yarn $(yarn --version)'
 
       - name: Installing dependencies
         run: yarn install --frozen-lockfile
 
       - name: Run tests
-        run: yarn test
+        run: yarn jest --maxWorkers=2 --ci --coverage ${{ env.coverage }} --logHeapUsage
 
       - name: Codecov
         uses: codecov/codecov-action@d9f34f8cd5cb3b3eb79b3e4b5dae3a16df499a70 # tag=v3.1.1
-        if: always()
+        if: env.coverage == 'true'
+
+  lint:
+    runs-on: ubuntu-latest
+
+    # lint shouldn't need more than 10 min
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - name: Init platform
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.symlinks true
+          echo 'Node $(node --version)'
+          echo 'Yarn $(yarn --version)'
+
+      - name: Installing dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: |
+          yarn eslint -f gha
+          yarn markdown-lint
+          yarn prettier
+
+      # - name: Type check
+      #   run: yarn type-check
 
   release:
-    needs: [test]
+    needs: [lint, test]
     runs-on: ubuntu-latest
 
     # tests shouldn't need more time
@@ -79,19 +131,19 @@ jobs:
         run: |
           git config --global core.autocrlf false
           git config --global core.symlinks true
-          git config --global user.email 'renovate@whitesourcesoftware.com'
+          git config --global user.email ${GIT_EMAIL}
           git config --global user.name  'Renovate Bot'
           yarn config set version-git-tag false
           npm config set scripts-prepend-node-path true
 
       - name: Check dry run
         run: |
-          if [[ "${{github.event_name}}" == "workflow_dispatch" && "${{ github.event.inputs.dryRun }}" != "true"  ]]; then
-            echo "DRY_RUN=false" >> $GITHUB_ENV
-          elif [[ "${{github.ref}}" == "refs/heads/${{env.DEFAULT_BRANCH}}" ]]; then
-            echo "DRY_RUN=false" >> $GITHUB_ENV
-          elif [[ "${{github.ref}}" =~ ^refs/heads/v[0-9]+(\.[0-9]+)?$ ]]; then
-            echo "DRY_RUN=false" >> $GITHUB_ENV
+          if [[ '${{github.event_name}}' == 'workflow_dispatch' && '${{ github.event.inputs.dryRun }}' != 'true'  ]]; then
+            echo 'DRY_RUN=false' >> $GITHUB_ENV
+          elif [[ '${{github.ref}}' == 'refs/heads/${{env.DEFAULT_BRANCH}}' ]]; then
+            echo 'DRY_RUN=false' >> $GITHUB_ENV
+          elif [[ '${{github.ref}}' =~ ^refs/heads/v[0-9]+(\.[0-9]+)?$ ]]; then
+            echo 'DRY_RUN=false' >> $GITHUB_ENV
           fi
 
       - name: Installing dependencies
@@ -99,7 +151,7 @@ jobs:
 
       - name: semantic-release
         run: |
-          npx semantic-release --dry-run ${{env.DRY_RUN}}
+          yarn semantic-release --dry-run ${{env.DRY_RUN}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

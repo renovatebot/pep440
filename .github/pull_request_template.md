@@ -1,10 +1,10 @@
 <!-- Make sure the `Allow edits and access to secrets by maintainers` checkbox is checked on this pull request. -->
 
-## Changes:
+## Changes
 
 <!-- Describe what behavior is changed by this PR. -->
 
-## Context:
+## Context
 
 <!-- Describe why you're making these changes if it's not already explained in a corresponding issue. -->
 <!-- If you're closing an existing issue with this pull request, use the keyword Closes #issue_number -->
