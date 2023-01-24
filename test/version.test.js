@@ -17,7 +17,7 @@ describe("valid(version)", () => {
 
   INVALID_VERSIONS.forEach((version) => {
     it("returns null for " + JSON.stringify(version), () => {
-      expect(valid(version)).toBe(null);
+      expect(valid(version)).toBeNull();
     });
   });
 });
@@ -25,7 +25,7 @@ describe("valid(version)", () => {
 describe("clean(version)", () => {
   INVALID_VERSIONS.forEach((version) => {
     it("returns null for " + JSON.stringify(version), () => {
-      expect(clean(version)).toBe(null);
+      expect(clean(version)).toBeNull();
     });
   });
 

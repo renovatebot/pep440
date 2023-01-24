@@ -69,13 +69,13 @@ const INVALID_SPECIFIERS = [
 describe("parse(range)", () => {
   SPECIFIERS.forEach((range) => {
     it("returns parsed for " + JSON.stringify(range), () => {
-      expect(parse(range)).not.toBe(null);
+      expect(parse(range)).not.toBeNull();
       expect(validRange(range)).toBe(true);
     });
   });
   INVALID_SPECIFIERS.forEach((range) => {
     it("returns null for " + JSON.stringify(range), () => {
-      expect(parse(range)).toBe(null);
+      expect(parse(range)).toBeNull();
       expect(validRange(range)).toBe(false);
     });
   });
@@ -202,7 +202,7 @@ describe("parse(range)", () => {
         ops.push("~=", "<=", ">=", "<", ">");
       }
       ops.forEach((op) => {
-        expect(parse(op + version)).not.toBe(null);
+        expect(parse(op + version)).not.toBeNull();
       });
     });
   });
@@ -217,7 +217,7 @@ describe("parse(range).length", () => {
     [">=2.0,<3,==2.4", 3],
   ].forEach(([range, length]) => {
     it("returns should be " + length + " for " + JSON.stringify(range), () => {
-      expect(parse(range).length).toBe(length);
+      expect(parse(range)).toHaveLength(length);
     });
   });
 });

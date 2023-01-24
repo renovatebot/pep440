@@ -5,7 +5,7 @@ const { INVALID_VERSIONS } = require("./fixture");
 describe("explain(version)", () => {
   INVALID_VERSIONS.forEach((version) => {
     it("returns null for " + JSON.stringify(version), () => {
-      expect(explain(version)).toBe(null);
+      expect(explain(version)).toBeNull();
     });
   });
 });
