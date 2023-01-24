@@ -63,7 +63,7 @@ jobs:
           echo 'Yarn $(yarn --version)'
 
       - name: Installing dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile --ignore-engines # semantic release will fail to install otherwise
 
       - name: Run tests
         run: yarn jest --maxWorkers=2 --ci --coverage ${{ env.coverage }} --logHeapUsage
