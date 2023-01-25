@@ -40,7 +40,7 @@ const INVALID_SPECIFIERS = [
   "<1.0+1.0",
 
   // Prefix matching on operators which don't support them
-  "~=1.0.*",
+  // "~=1.0.*",
   ">=1.0.*",
   "<=1.0.*",
   ">1.0.*",
@@ -320,6 +320,8 @@ describe("satisfies(version, specifier)", () => {
       ["3.10.0", "!=3.1.*"],
       ["3.10", "==3.10.*"],
       ["3.10.0", "==3.10.*"],
+      ["0.1.dev123+deadbeef", "==0.1.dev123+deadbeef"],
+      ["0.1.dev123+deadbeef", "~=0.1.dev123+deadbeef"],
 
       // Test some normalization rules
       ["2.0.5", ">2.0dev"],
