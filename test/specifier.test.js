@@ -321,7 +321,6 @@ describe("satisfies(version, specifier)", () => {
       ["3.10", "==3.10.*"],
       ["3.10.0", "==3.10.*"],
       ["0.1.dev123+deadbeef", "==0.1.dev123+deadbeef"],
-      ["0.1.dev123+deadbeef", "~=0.1.dev123+deadbeef"],
 
       // Test some normalization rules
       ["2.0.5", ">2.0dev"],
@@ -417,6 +416,7 @@ describe("satisfies(version, specifier)", () => {
       ["2.0", "~=1.0"],
       ["1.1.0", "~=1.0.0"],
       ["1.1.post1", "~=1.0.0"],
+      ["0.1.dev123+deadbeef", "~=0.1.dev123+deadbeef"],
 
       // Test that epochs are handled sanely
       ["1.0", "~=2!1.0"],
