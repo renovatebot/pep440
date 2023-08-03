@@ -2,21 +2,25 @@
   "name": "@renovatebot/pep440",
   "version": "0.0.0-semantic-release",
   "description": "PEP440 implementation in JavaScript",
-  "license": "Apache-2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/renovatebot/pep440.git"
-  },
-  "author": "Ayoub Kaanich",
+  "keywords": [
+    "pep440"
+  ],
   "homepage": "https://github.com/renovatebot/pep440#readme",
   "bugs": {
     "url": "https://github.com/renovatebot/pep440/issues"
   },
-  "main": "index.js",
-  "engines": {
-    "node": "^18.12.0 || >= 20.0.0",
-    "pnpm": "^8.6.11"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renovatebot/pep440.git"
   },
+  "license": "Apache-2.0",
+  "author": "Ayoub Kaanich",
+  "main": "index.js",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "lib"
+  ],
   "scripts": {
     "eslint": "eslint .",
     "eslint-fix": "eslint . --fix",
@@ -30,14 +34,6 @@
     "prettier-fix": "prettier --ignore-unknown --write \"**/*.*\"",
     "test": "run-s prettier eslint markdown-lint jest"
   },
-  "files": [
-    "index.d.ts",
-    "index.js",
-    "lib"
-  ],
-  "keywords": [
-    "pep440"
-  ],
   "devDependencies": {
     "conventional-changelog-conventionalcommits": "6.1.0",
     "eslint": "8.45.0",
@@ -52,8 +48,12 @@
     "markdownlint-cli2": "0.8.1",
     "npm-run-all": "4.1.5",
     "prettier": "2.8.8",
-    "prettier-plugin-package": "1.3.1",
+    "prettier-plugin-packagejson": "2.4.5",
     "semantic-release": "21.0.7"
   },
-  "packageManager": "pnpm@8.6.11"
+  "packageManager": "pnpm@8.6.11",
+  "engines": {
+    "node": "^18.12.0 || >= 20.0.0",
+    "pnpm": "^8.6.11"
+  }
 }
