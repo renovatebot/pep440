@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
     inputs:
       dryRun:
-        description: "Dry-Run"
-        default: "true"
+        description: 'Dry-Run'
+        default: 'true'
         required: false
 
 concurrency:
