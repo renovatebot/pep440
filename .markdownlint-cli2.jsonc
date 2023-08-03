@@ -22,7 +22,6 @@
 
   // Define glob expressions to ignore
   "ignores": [
-    ".yarn",
     "**/node_modules/**",
     "**/TestResults/**",
     "**/bin/**",
