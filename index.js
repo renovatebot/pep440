@@ -1,6 +1,6 @@
-const { valid, clean, explain } = require("./lib/version");
+const { valid, clean, explain } = require('./lib/version');
 
-const { lt, le, eq, ne, ge, gt, compare, rcompare } = require("./lib/operator");
+const { lt, le, eq, ne, ge, gt, compare, rcompare } = require('./lib/operator');
 
 const {
   filter,
@@ -9,9 +9,9 @@ const {
   RANGE_PATTERN,
   satisfies,
   validRange,
-} = require("./lib/specifier");
+} = require('./lib/specifier');
 
-const { major, minor, patch, inc } = require("./lib/semantic");
+const { major, minor, patch, inc } = require('./lib/semantic');
 
 module.exports = {
   // version
