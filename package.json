@@ -51,7 +51,7 @@
     "prettier-plugin-packagejson": "2.4.6",
     "semantic-release": "21.1.2"
   },
-  "packageManager": "pnpm@8.9.1",
+  "packageManager": "pnpm@8.9.2",
   "engines": {
     "node": "^18.12.0 || >= 20.0.0",
     "pnpm": "^8.6.11"
