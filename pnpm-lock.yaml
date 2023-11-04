@@ -15,8 +15,8 @@ devDependencies:
     specifier: 9.0.0
     version: 9.0.0(eslint@8.52.0)
   eslint-formatter-gha:
-    specifier: 1.4.2
-    version: 1.4.2
+    specifier: 1.4.3
+    version: 1.4.3
   eslint-plugin-import:
     specifier: 2.29.0
     version: 2.29.0(eslint@8.52.0)
@@ -2089,8 +2089,8 @@ packages:
       eslint: 8.52.0
     dev: true
 
-  /eslint-formatter-gha@1.4.2:
-    resolution: {integrity: sha512-V+i+jdUOAkkCWK0gESohLjYk/fJpgMgE0L6QPGd8b5jtBQlG+MT/zb7yy2/HlqccIkRBYq/brT2rLW2K8H9kqA==}
+  /eslint-formatter-gha@1.4.3:
+    resolution: {integrity: sha512-lnuccy7JUn/KZfRgUw9Sb81x4esxJMpaGXNniv1UKT6llYhRpCuo64SgkYEkkPGSfkRwujuP8Xju5M8oqXt4HQ==}
     dependencies:
       '@actions/core': 1.10.1
       eslint-formatter-json: 8.40.0
