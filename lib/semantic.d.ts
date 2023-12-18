@@ -1,6 +1,6 @@
 export function inc(
   input: string,
-  release: string,
+  release?: string,
   preReleaseIdentifier?: string,
 ): string | null;
 export function major(input: string): number;
