@@ -6,7 +6,7 @@ module.exports = {
   testEnvironment: 'node',
   collectCoverage: true,
   collectCoverageFrom: ['lib/**/*.js'],
-  coverageProvider: 'v8',
+  // coverageProvider: 'v8', bugy on node v20.11.0 :-/
   coverageReporters: ci ? ['html', 'json', 'text'] : ['html', 'text'],
   coverageThreshold: {
     global: {
