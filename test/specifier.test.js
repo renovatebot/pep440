@@ -510,3 +510,7 @@ describe('filter([versions], specifier, {prereleases})', () => {
     });
   });
 });
+
+it('filter works without options', () => {
+  expect(filter([], '')).toEqual([]);
+});
