@@ -1,5 +1,5 @@
 {
-  "*.md": "markdownlint-cli2-fix",
-  "**/*.{ts,js,mjs,cjs}": "eslint --cache --fix",
-  "*": "prettier --cache --ignore-unknown --write"
+  "*.md": ["markdownlint-cli2 --fix", "prettier --cache --write"],
+  "*.{ts,js,mjs,cjs}": ["eslint --cache --fix", "prettier --cache --write"],
+  "!*.{ts,js,mjs,cjs,md}": "prettier --cache --ignore-unknown --write"
 }
