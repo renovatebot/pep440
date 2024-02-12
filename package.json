@@ -29,7 +29,7 @@
     "lint-fix": "run-s eslint-fix markdown-lint-fix prettier-fix",
     "markdown-lint": "markdownlint-cli2",
     "markdown-lint-fix": "markdownlint-cli2-fix",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --ignore-unknown --check \"**/*.*\"",
     "prettier-fix": "prettier --ignore-unknown --write \"**/*.*\"",
     "test": "run-s prettier eslint markdown-lint jest"
