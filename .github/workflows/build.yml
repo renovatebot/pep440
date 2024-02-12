@@ -15,7 +15,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.ref_name != 'main' }}
 
 env:
   GIT_EMAIL: bot+pep440@renovateapp.com
@@ -47,6 +47,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 2
+          show-progress: false
+          filter: blob:none # we don't need all blobs
 
       - name: Enable corepack
         run: corepack enable
@@ -87,6 +89,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 2
+          show-progress: false
+          filter: blob:none # we don't need all blobs
 
       - name: Enable corepack
         run: corepack enable
@@ -128,6 +132,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
+          show-progress: false
+          filter: blob:none # we don't need all blobs
 
       - name: Enable corepack
         run: corepack enable
