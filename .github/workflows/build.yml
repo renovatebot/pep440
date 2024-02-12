@@ -20,12 +20,12 @@ concurrency:
 env:
   GIT_EMAIL: bot+pep440@renovateapp.com
   DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-  NODE_VERSION: 18 # needs to be in sync with other v18 below
+  NODE_VERSION: 20 # needs to be in sync with other versions below
   DRY_RUN: true
 
 jobs:
   test:
-    name: ${{ matrix.node-version == 18 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
+    name: ${{ matrix.node-version == 20 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
     runs-on: ubuntu-latest
 
     # tests shouldn't need more time
@@ -40,7 +40,7 @@ jobs:
         #     node-version: 12
 
     env:
-      coverage: ${{ matrix.os == 'ubuntu-latest' && matrix.node-version == 18 }}
+      coverage: ${{ matrix.os == 'ubuntu-latest' && matrix.node-version == 20 }}
       NODE_VERSION: ${{ matrix.node-version }}
 
     steps:
