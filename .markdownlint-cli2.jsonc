@@ -3,10 +3,10 @@
     "extends": "markdownlint/style/prettier",
     "list-marker-space": {
       "ul_multi": 3,
-      "ul_single": 3
+      "ul_single": 3,
     },
     "ul-indent": {
-      "indent": 4
+      "indent": 4,
     },
 
     // Disable some built-in rules
@@ -14,7 +14,7 @@
     "line-length": false,
     "no-emphasis-as-header": false,
     "no-inline-html": false,
-    "single-h1": false
+    "single-h1": false,
   },
 
   // Define glob expressions to use (only valid at root)
@@ -26,6 +26,6 @@
     "**/TestResults/**",
     "**/bin/**",
     "**/obj/**",
-    "coverage/"
-  ]
+    "coverage/",
+  ],
 }
