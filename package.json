@@ -30,8 +30,8 @@
     "markdown-lint": "markdownlint-cli2",
     "markdown-lint-fix": "markdownlint-cli2-fix",
     "prepare": "husky install",
-    "prettier": "prettier --ignore-unknown --check \"**/*.*\"",
-    "prettier-fix": "prettier --ignore-unknown --write \"**/*.*\"",
+    "prettier": "prettier --ignore-unknown --check '**/*.*'",
+    "prettier-fix": "prettier --ignore-unknown --write '**/*.*'",
     "test": "run-s prettier eslint markdown-lint jest"
   },
   "devDependencies": {
