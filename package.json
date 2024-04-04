@@ -48,7 +48,7 @@
     "markdownlint-cli2": "0.12.1",
     "npm-run-all2": "6.1.2",
     "prettier": "3.2.5",
-    "prettier-plugin-packagejson": "2.4.12",
+    "prettier-plugin-packagejson": "2.4.13",
     "semantic-release": "23.0.6"
   },
   "packageManager": "pnpm@8.15.5",
