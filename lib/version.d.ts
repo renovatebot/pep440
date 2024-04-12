@@ -9,5 +9,5 @@ export function parse(
   version: string | null | undefined,
   regex?: RegExp,
 ): Pep440Version | null;
-export function stringify(version: string | null | undefined): string | null;
+export function stringify(version: Pep440Version | null | undefined): string | null;
 export function valid(version: string | null | undefined): string | null;
