@@ -10,6 +10,6 @@ export function parse(
   regex?: RegExp,
 ): Pep440Version | null;
 export function stringify(
-  version: Pep440Version | null | undefined
+  version: Pep440Version | null | undefined,
 ): string | null;
 export function valid(version: string | null | undefined): string | null;
