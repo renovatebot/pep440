@@ -33,8 +33,8 @@ devDependencies:
     specifier: 29.7.0
     version: 29.7.0
   lint-staged:
-    specifier: 15.2.9
-    version: 15.2.9
+    specifier: 15.2.10
+    version: 15.2.10
   markdownlint-cli2:
     specifier: 0.13.0
     version: 0.13.0
@@ -3739,8 +3739,8 @@ packages:
       uc.micro: 2.1.0
     dev: true
 
-  /lint-staged@15.2.9:
-    resolution: {integrity: sha512-BZAt8Lk3sEnxw7tfxM7jeZlPRuT4M68O0/CwZhhaw6eeWu0Lz5eERE3m386InivXB64fp/mDID452h48tvKlRQ==}
+  /lint-staged@15.2.10:
+    resolution: {integrity: sha512-5dY5t743e1byO19P9I4b3x8HJwalIznL5E1FWYnU6OWw33KxNBSLAc6Cy7F2PsFEO8FKnLwjwm5hx7aMF0jzZg==}
     engines: {node: '>=18.12.0'}
     hasBin: true
     dependencies:
