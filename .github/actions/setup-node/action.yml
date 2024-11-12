@@ -21,7 +21,7 @@ runs:
         else
           node_major=$(echo '${{ inputs.node-version }}' | grep -E -o '^[0-9]+')
         fi
-        echo "CACHE_KEY=node_modules-v${node_major}-${{
+        echo "CACHE_KEY=node_modules-${{ runner.os }}-v${node_major}-${{
           hashFiles('.node-version', 'pnpm-lock.yaml')
         }}" >> "$GITHUB_ENV"
 
@@ -48,7 +48,7 @@ runs:
     - name: ⚙️ Setup Node.js ${{ inputs.node-version }}
       uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
       with:
-        node-version-file: ${{ inputs.node-version == '' && '.node-version' || inputs.node-version }}
+        node-version-file: ${{ inputs.node-version == '' && '.node-version' || '' }}
         node-version: ${{ inputs.node-version }}
         cache: ${{ env.CACHE_HIT != 'true' && 'pnpm' || '' }}
 
