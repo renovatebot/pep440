@@ -16,7 +16,6 @@ runs:
     - name: ⚙️ Calculate `CACHE_KEY`
       shell: bash
       run: |
-        env
         if [[ -z '${{ inputs.node-version }}' ]]; then
           node_major=$(grep -E -o '^[0-9]+' .node-version)
         else
