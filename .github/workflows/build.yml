@@ -42,7 +42,7 @@ jobs:
     needs:
       - prepare
     name: ${{ matrix.node-version == 20 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     # tests shouldn't need more time
     timeout-minutes: 30
