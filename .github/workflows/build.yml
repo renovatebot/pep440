@@ -41,7 +41,7 @@ jobs:
   test:
     needs:
       - prepare
-    name: ${{ matrix.node-version == 20 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
+    name: ${{ matrix.node-version == 22 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
     runs-on: ${{ matrix.os }}
 
     # tests shouldn't need more time
@@ -50,7 +50,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        node-version: [18, 20, 22]
+        node-version: [20, 22]
         # exclude:
         #   - os: windows-latest
         #     node-version: 12
