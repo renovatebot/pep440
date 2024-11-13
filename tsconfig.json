@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "./dist",
+    "allowJs": true,
     "module": "commonjs",
     "noImplicitAny": true,
     "lib": ["ES2023"],
@@ -9,7 +8,8 @@
     /* https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping */
     "target": "ES2022",
     "moduleResolution": "node",
-    "importHelpers": true
+    "importHelpers": true,
+    "noEmit": true
   },
   "exclude": ["node_modules", "dist"]
 }
