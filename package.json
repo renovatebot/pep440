@@ -57,7 +57,7 @@
     "prettier": "3.3.3",
     "prettier-plugin-packagejson": "2.5.6",
     "semantic-release": "24.2.0",
-    "typescript-eslint": "8.15.0"
+    "typescript-eslint": "8.16.0"
   },
   "packageManager": "pnpm@9.14.2",
   "engines": {
