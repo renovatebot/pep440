@@ -1,4 +1,4 @@
-const { valid, clean, explain } = require('./lib/version');
+const { valid, clean, explain, parse } = require('./lib/version');
 
 const { lt, le, eq, ne, ge, gt, compare, rcompare } = require('./lib/operator');
 
@@ -18,6 +18,7 @@ module.exports = {
   valid,
   clean,
   explain,
+  parse,
 
   // operator
   lt,
