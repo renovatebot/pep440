@@ -44,7 +44,7 @@
     "eslint": "9.22.0",
     "eslint-config-prettier": "10.1.1",
     "eslint-formatter-gha": "1.5.2",
-    "eslint-import-resolver-typescript": "3.8.3",
+    "eslint-import-resolver-typescript": "3.9.1",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jest": "28.11.0",
     "eslint-plugin-promise": "7.2.1",
@@ -57,7 +57,7 @@
     "prettier": "3.5.3",
     "prettier-plugin-packagejson": "2.5.10",
     "semantic-release": "24.2.3",
-    "typescript-eslint": "8.26.0"
+    "typescript-eslint": "8.26.1"
   },
   "packageManager": "pnpm@10.6.3",
   "engines": {
