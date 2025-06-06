@@ -36,17 +36,17 @@
   },
   "devDependencies": {
     "@containerbase/eslint-plugin": "1.1.4",
-    "@eslint/js": "9.27.0",
+    "@eslint/js": "9.28.0",
     "@types/eslint-config-prettier": "6.11.3",
     "@types/jest": "29.5.14",
     "@types/node": "20.17.57",
     "conventional-changelog-conventionalcommits": "8.0.0",
-    "eslint": "9.27.0",
+    "eslint": "9.28.0",
     "eslint-config-prettier": "10.1.5",
     "eslint-formatter-gha": "1.5.2",
     "eslint-import-resolver-typescript": "3.10.1",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-jest": "28.11.0",
+    "eslint-plugin-jest": "28.12.0",
     "eslint-plugin-promise": "7.2.1",
     "globals": "15.15.0",
     "husky": "9.1.7",
@@ -57,7 +57,7 @@
     "prettier": "3.5.3",
     "prettier-plugin-packagejson": "2.5.14",
     "semantic-release": "24.2.5",
-    "typescript-eslint": "8.32.1"
+    "typescript-eslint": "8.33.0"
   },
   "packageManager": "pnpm@10.11.0",
   "engines": {
