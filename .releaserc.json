@@ -6,10 +6,10 @@
       "@semantic-release/github",
       {
         "releasedLabels": false,
-        "successComment": false
+        "successCommentCondition": false
       }
     ],
-    "@semantic-release/npm"
+    "@containerbase/semantic-release-pnpm"
   ],
   "analyzeCommits": {
     "releaseRules": [
@@ -56,10 +56,6 @@
         "section": "Styles"
       },
       {
-        "type": "chore",
-        "section": "Miscellaneous Chores"
-      },
-      {
         "type": "refactor",
         "section": "Code Refactoring"
       },
@@ -74,15 +70,18 @@
       {
         "type": "ci",
         "section": "Continuous Integration"
+      },
+      {
+        "type": "chore",
+        "section": "Miscellaneous Chores"
       }
     ]
   },
   "tagFormat": "${version}",
   "branches": [
     {
-      "name": "v2",
-      "range": "2.x",
-      "channel": "version2"
+      "name": "maint/+([0-9])?(.{+([0-9]),x}).x",
+      "range": "${name.replace(/^maint\\//g, '')}"
     },
     {
       "name": "main"
