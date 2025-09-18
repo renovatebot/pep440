@@ -39,7 +39,7 @@ jobs:
     needs:
       - setup
     name: ${{ matrix.node-version == 22 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
-    runs-on: ${{ matrix.os }}-latest
+    runs-on: ${{ matrix.os }}
 
     # tests shouldn't need more time
     timeout-minutes: 30
