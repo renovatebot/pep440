@@ -16,7 +16,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-  cancel-in-progress: ${{ github.ref_name != 'main' && !startsWith(github.ref_name, 'maint/') && github.event_name == 'push' }}
+  cancel-in-progress: ${{ github.ref_name != 'main' && !startsWith(github.ref_name, 'maint/') && github.event_name != 'push' }}
 
 env:
   DRY_RUN: ${{ github.ref_name != github.event.repository.default_branch && !startsWith(github.ref_name, 'maint/') }}
