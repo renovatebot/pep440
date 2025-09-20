@@ -12,8 +12,8 @@ importers:
         specifier: 1.1.10
         version: 1.1.10(eslint-plugin-import@2.32.0)(eslint-plugin-promise@7.2.1(eslint@9.35.0))(eslint@9.35.0)
       '@containerbase/semantic-release-pnpm':
-        specifier: 1.2.1
-        version: 1.2.1(semantic-release@24.2.8(typescript@5.9.2))
+        specifier: 1.2.2
+        version: 1.2.2(semantic-release@24.2.8(typescript@5.9.2))
       '@eslint/js':
         specifier: 9.35.0
         version: 9.35.0
@@ -260,8 +260,8 @@ packages:
       eslint-plugin-import: ^2.31.0
       eslint-plugin-promise: ^7.0.0
 
-  '@containerbase/semantic-release-pnpm@1.2.1':
-    resolution: {integrity: sha512-UNEUHZCZ3w6xRFuDEr6/D5Nqu/dlIdwez9yVdKHdjACy4ogGOPmqpDl3kXSyxwvmmzybp5Ux0rjg+39bJfyaMg==}
+  '@containerbase/semantic-release-pnpm@1.2.2':
+    resolution: {integrity: sha512-Eq+3Cl9ksIbfla44kaT6XSEOHEvF2K/WTP3Hk7bH15/8rY+XE5dw3zYWTpjttfy14Oyan0KRxcrOq4STmM8xKA==}
     engines: {node: ^22.11.0 || ^24}
     peerDependencies:
       semantic-release: ^24.0.0
@@ -3646,7 +3646,7 @@ snapshots:
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.43.0(eslint@9.35.0)(typescript@5.9.2))(eslint-import-resolver-typescript@4.4.4)(eslint@9.35.0)
       eslint-plugin-promise: 7.2.1(eslint@9.35.0)
 
-  '@containerbase/semantic-release-pnpm@1.2.1(semantic-release@24.2.8(typescript@5.9.2))':
+  '@containerbase/semantic-release-pnpm@1.2.2(semantic-release@24.2.8(typescript@5.9.2))':
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 5.0.0
