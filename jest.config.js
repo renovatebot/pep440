@@ -6,7 +6,8 @@ module.exports = {
   testEnvironment: 'node',
   collectCoverage: true,
   collectCoverageFrom: ['lib/**/*.js'],
-  // coverageProvider: 'v8', bugy on node v20.11.0 :-/
+  reporters: ci ? ['default', 'jest-junit', 'github-actions'] : ['default'],
+  coverageProvider: 'v8',
   coverageReporters: ci ? ['html', 'json', 'text'] : ['html', 'text'],
   coverageThreshold: {
     global: {
