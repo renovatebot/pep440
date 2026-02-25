@@ -455,6 +455,9 @@ describe('satisfies([versions], specifier, {prereleases})', () => {
       ['==2.0a1.*', '2.0a1.dev1', true],
       ['<=2.0', '1.0.dev1', false],
       ['<=2.0.dev1', '1.0a1', true],
+      // ~= with a pre-release spec: prereleases should be inferred from the specifier
+      ['~=2.13.0b2', '2.13.0b2', true],
+      ['~=2.13.0b2', '2.13.1b1', true],
     ],
     ([spec, version, result]) => [
       [spec, version, undefined, result],
