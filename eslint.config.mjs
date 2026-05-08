@@ -1,29 +1,29 @@
-/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import-x/no-named-as-default-member */
 import eslintContainerbase from '@containerbase/eslint-plugin';
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import eslintPluginImport from 'eslint-plugin-import';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import * as importX from 'eslint-plugin-import-x';
 import pluginPromise from 'eslint-plugin-promise';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import eslintJestPlugin from 'eslint-plugin-jest';
+import vitest from '@vitest/eslint-plugin';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
-export default tseslint.config(
-  {
-    ignores: [
-      '**/.git/',
-      '**/.vscode',
-      '**/node_modules/',
-      '**/dist/',
-      '**/coverage/',
-      '**/__fixtures__/**/*',
-      '**/__mocks__/**/*',
-      '**/*.d.ts',
-      '**/*.generated.ts',
-      'tools/dist',
-      'patches',
-    ],
-  },
+export default defineConfig(
+  globalIgnores([
+    '**/.git/',
+    '**/.vscode',
+    '**/node_modules/',
+    '**/dist/',
+    '**/coverage/',
+    '**/__fixtures__/**/*',
+    '**/__mocks__/**/*',
+    '**/*.d.ts',
+    '**/*.generated.ts',
+    'tools/dist',
+    'patches',
+  ]),
   {
     linterOptions: {
       reportUnusedDisableDirectives: true,
@@ -38,17 +38,13 @@ export default tseslint.config(
     ...config,
     files: ['**/*.{ts,js,mjs,cjs}'],
   })),
-  eslintPluginImport.flatConfigs.errors,
-  eslintPluginImport.flatConfigs.warnings,
-  eslintPluginImport.flatConfigs.recommended,
-  eslintPluginImport.flatConfigs.typescript,
-  eslintJestPlugin.configs['flat/recommended'],
-  eslintJestPlugin.configs['flat/style'],
+  vitest.configs.recommended,
   pluginPromise.configs['flat/recommended'],
   eslintContainerbase.configs.all,
   eslintConfigPrettier,
   {
     files: ['**/*.{ts,js,mjs,cjs}'],
+    extends: [importX.flatConfigs.recommended, importX.flatConfigs.typescript],
 
     languageOptions: {
       globals: {
@@ -63,11 +59,7 @@ export default tseslint.config(
     },
 
     settings: {
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-        },
-      },
+      'import-x/resolver-next': [createTypeScriptImportResolver()],
     },
   },
   {
@@ -106,13 +98,13 @@ export default tseslint.config(
     files: ['test/**/*.{ts,js,mjs,cjs}'],
     languageOptions: {
       globals: {
-        ...globals.jest,
+        ...globals.vitest,
       },
     },
     rules: {
       'prefer-destructuring': 0,
       'prefer-promise-reject-errors': 0,
-      'import/no-extraneous-dependencies': 0,
+      'import-x/no-extraneous-dependencies': 0,
       'global-require': 0,
     },
   },

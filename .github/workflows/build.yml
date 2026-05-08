@@ -84,7 +84,7 @@ jobs:
           echo 'pnpm $(pnpm --version)'
 
       - name: Run tests
-        run: pnpm jest --maxWorkers=2 --ci --coverage ${{ env.coverage }} --logHeapUsage
+        run: pnpm vitest --coverage ${{ env.coverage }} --logHeapUsage
 
       - name: Upload coverage
         if: env.coverage == 'true' && github.event_name != 'merge_group' && !cancelled()
