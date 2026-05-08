@@ -8,7 +8,8 @@
     "target": "es2022",
     "moduleResolution": "node16",
     "outDir": "./dist",
-    "noEmit": true
+    "noEmit": true,
+    "types": ["vitest/globals"]
   },
   "exclude": ["node_modules", "dist"]
 }
