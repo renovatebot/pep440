@@ -1,4 +1,4 @@
-import type { Pep440Version } from './shared';
+import type { Pep440Version } from './shared.js';
 
 export const VERSION_PATTERN: string;
 export function clean(version: string | null | undefined): string | null;

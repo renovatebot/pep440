@@ -1,4 +1,4 @@
-import type { Pep440Constraint, Pep440SpecifierOptions } from './shared';
+import type { Pep440Constraint, Pep440SpecifierOptions } from './shared.js';
 
 export const RANGE_PATTERN: string;
 

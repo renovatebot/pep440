@@ -1,19 +1,19 @@
-const { valid, clean, explain, parse } = require('./lib/version');
+import { valid, clean, explain, parse } from './lib/version.js';
 
-const { lt, le, eq, ne, ge, gt, compare, rcompare } = require('./lib/operator');
+import { lt, le, eq, ne, ge, gt, compare, rcompare } from './lib/operator.js';
 
-const {
+import {
   filter,
   maxSatisfying,
   minSatisfying,
   RANGE_PATTERN,
   satisfies,
   validRange,
-} = require('./lib/specifier');
+} from './lib/specifier.js';
 
-const { major, minor, patch, inc } = require('./lib/semantic');
+import { major, minor, patch, inc } from './lib/semantic.js';
 
-module.exports = {
+export {
   // version
   valid,
   clean,
@@ -23,12 +23,12 @@ module.exports = {
   // operator
   lt,
   le,
-  lte: le,
+  le as lte,
   eq,
   ne,
-  neq: ne,
+  ne as neq,
   ge,
-  gte: ge,
+  ge as gte,
   gt,
   compare,
   rcompare,

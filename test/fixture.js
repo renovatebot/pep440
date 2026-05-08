@@ -80,11 +80,7 @@ const INVALID_VERSIONS = [
   () => true,
 ];
 
-module.exports = {
-  VERSIONS,
-  INVALID_VERSIONS,
-  cross,
-};
+export { VERSIONS, INVALID_VERSIONS, cross };
 
 function cross(array, fn) {
   return [].concat(...array.map(fn));

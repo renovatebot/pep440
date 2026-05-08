@@ -1,4 +1,4 @@
-const { major, minor, patch, inc } = require('..');
+import { major, minor, patch, inc } from '../index.js';
 
 describe('major(version)', () => {
   it('returns correct value', () => {
