@@ -1,14 +1,13 @@
 {
+  // https://github.com/tsconfig/bases/blob/main/bases/node20.json
   "compilerOptions": {
     "allowJs": true,
-    "module": "commonjs",
     "noImplicitAny": true,
-    "lib": ["ES2023"],
+    "lib": ["es2023"],
+    "module": "nodenext",
+    "target": "es2022",
+    "moduleResolution": "node16",
     "outDir": "./dist",
-    /* https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping */
-    "target": "ES2022",
-    "moduleResolution": "node",
-    "importHelpers": true,
     "noEmit": true
   },
   "exclude": ["node_modules", "dist"]
