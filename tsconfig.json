@@ -1,12 +1,8 @@
 {
-  // https://github.com/tsconfig/bases/blob/main/bases/node20.json
+  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
     "noImplicitAny": true,
-    "lib": ["es2023"],
-    "module": "nodenext",
-    "target": "es2022",
-    "moduleResolution": "node16",
     "outDir": "./dist",
     "noEmit": true,
     "types": ["vitest/globals"]
