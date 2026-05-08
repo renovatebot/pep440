@@ -1,5 +1,5 @@
-export type { Pep440Constraint, Pep440Version } from './lib/shared';
-export { clean, explain, valid, parse } from './lib/version';
+export type { Pep440Constraint, Pep440Version } from './lib/shared.js';
+export { clean, explain, valid, parse } from './lib/version.js';
 
 export {
   compare,
@@ -13,7 +13,7 @@ export {
   ne,
   ne as neq,
   rcompare,
-} from './lib/operator';
+} from './lib/operator.js';
 
 export {
   filter,
@@ -22,6 +22,6 @@ export {
   RANGE_PATTERN,
   satisfies,
   validRange,
-} from './lib/specifier';
+} from './lib/specifier.js';
 
-export { major, minor, patch, inc } from './lib/semantic';
+export { major, minor, patch, inc } from './lib/semantic.js';

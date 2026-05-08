@@ -1,6 +1,6 @@
-const { explain } = require('../lib/version');
+import { explain } from '../lib/version.js';
 
-const { INVALID_VERSIONS } = require('./fixture');
+import { INVALID_VERSIONS } from './fixture.js';
 
 describe('explain(version)', () => {
   INVALID_VERSIONS.forEach((version) => {

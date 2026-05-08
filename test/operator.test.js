@@ -1,6 +1,6 @@
-const operator = require('../lib/operator');
+import * as operator from '../lib/operator.js';
 
-const { VERSIONS, cross } = require('./fixture');
+import { VERSIONS, cross } from './fixture.js';
 
 describe('compare(version, other)', () => {
   // Below we'll generate every possible combination of VERSIONS that
@@ -50,6 +50,8 @@ describe('compare(version, other)', () => {
     ),
   ].forEach(([left, op, right, expected]) => {
     it(`returns ${expected} for '${left}' ${op} '${right}'`, () => {
+      // TODO: fix me?
+      // eslint-disable-next-line import-x/namespace
       expect(operator[op](left, right)).toBe(expected);
     });
   });

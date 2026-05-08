@@ -1,13 +1,13 @@
-const { cross } = require('./fixture');
+import { cross } from './fixture.js';
 
-const {
+import {
   parse,
   validRange,
   satisfies,
   maxSatisfying,
   minSatisfying,
   filter,
-} = require('../lib/specifier');
+} from '../lib/specifier.js';
 
 const SPECIFIERS = [
   '~=2.0',
