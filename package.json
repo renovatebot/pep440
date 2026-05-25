@@ -59,7 +59,7 @@
     "prettier": "3.8.3",
     "prettier-plugin-packagejson": "3.0.2",
     "semantic-release": "25.0.3",
-    "typescript-eslint": "8.59.3",
+    "typescript-eslint": "8.59.4",
     "vitest": "^4.1.5"
   },
   "packageManager": "pnpm@11.1.3",
