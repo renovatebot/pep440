@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@807dd8a807e8cf2a6d3e7e77fc4b74533f0cd7ae # v4.6.38
+        uses: containerbase/internal-tools/setup@1d932825f2ee6064ca521035959d1eabc6ed5a2c # v4.6.39
         with:
           save-cache: true
 
@@ -68,7 +68,7 @@ jobs:
           filter: blob:none # we don't need all blobs
 
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@807dd8a807e8cf2a6d3e7e77fc4b74533f0cd7ae # v4.6.38
+        uses: containerbase/internal-tools/setup@1d932825f2ee6064ca521035959d1eabc6ed5a2c # v4.6.39
         with:
           checkout: false
           node-version: ${{ matrix.node-version }}
@@ -117,7 +117,7 @@ jobs:
 
     steps:
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@807dd8a807e8cf2a6d3e7e77fc4b74533f0cd7ae # v4.6.38
+        uses: containerbase/internal-tools/setup@1d932825f2ee6064ca521035959d1eabc6ed5a2c # v4.6.39
 
       - name: Lint
         run: |
@@ -151,7 +151,7 @@ jobs:
           filter: blob:none # we don't need all blobs
 
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@807dd8a807e8cf2a6d3e7e77fc4b74533f0cd7ae # v4.6.38
+        uses: containerbase/internal-tools/setup@1d932825f2ee6064ca521035959d1eabc6ed5a2c # v4.6.39
         with:
           checkout: false
 
