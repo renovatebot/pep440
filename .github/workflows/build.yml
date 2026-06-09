@@ -94,7 +94,7 @@ jobs:
 
       - name: Codecov test results
         if: github.event_name != 'merge_group' && !cancelled()
-        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe # v5.5.4
+        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5.5.5
         with:
           use_oidc: true
           report_type: test_results
@@ -102,7 +102,7 @@ jobs:
 
       - name: Codecov coverage result
         if: env.coverage == 'true' && github.event_name != 'merge_group'
-        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe # v5.5.4
+        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5.5.5
         with:
           use_oidc: true
           flags: node${{ matrix.node-version }}-${{ runner.os }}
