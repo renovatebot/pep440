@@ -260,6 +260,7 @@ describe('satisfies(version, specifier)', () => {
       ['2.0.1', '!=2.0'],
       ['2.0.1', '!=2.0.0'],
       ['2.0', '!=2.0+deadbeef'],
+      ['2.0.1+2', '!=2.0.1+1'],
 
       // Test the in-equality operation with a prefix
       ['2.0', '!=3.*'],
@@ -331,6 +332,7 @@ describe('satisfies(version, specifier)', () => {
       ['2.1', '==2.0'],
       ['2.1', '==2.0.0'],
       ['2.0', '==2.0+deadbeef'],
+      ['2.0.1+2', '==2.0.1+1'],
 
       // Test the equality operation with a prefix
       ['2.0', '==3.*'],
@@ -436,6 +438,9 @@ describe('satisfies(version, specifier)', () => {
       ['nope', '===lolwat', false],
       ['1.0.0', '===1.0', false],
       ['1.0.dev0', '===1.0.dev0', true],
+      ['1.0.0+2', '===1.0.0+2', true],
+      ['1.0.0+2', '===1.0.0', false],
+      ['1.0.0+2', '===1.0.0+1', false],
     ],
   ].forEach(([version, spec, expected]) => {
     it(`returns ${expected} for ${JSON.stringify(
