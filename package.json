@@ -36,7 +36,7 @@
     "vitest": "vitest run"
   },
   "devDependencies": {
-    "@containerbase/eslint-plugin": "2.1.1",
+    "@containerbase/eslint-plugin": "3.0.0",
     "@containerbase/semantic-release-pnpm": "1.4.3",
     "@eslint/js": "10.0.1",
     "@tsconfig/node22": "22.0.6",
