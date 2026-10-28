@@ -4,9 +4,9 @@ This file is dual licensed under the terms of the Apache License, Version
 for complete details.
 */
 
-import { valid, clean } from '../lib/version.js';
+import { clean, valid } from '../lib/version.js';
 
-import { VERSIONS, INVALID_VERSIONS } from './fixture.js';
+import { INVALID_VERSIONS, VERSIONS } from './fixture.js';
 
 describe('valid(version)', () => {
   VERSIONS.forEach((version) => {

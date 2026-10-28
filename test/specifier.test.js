@@ -1,13 +1,12 @@
-import { cross } from './fixture.js';
-
 import {
-  parse,
-  validRange,
-  satisfies,
+  filter,
   maxSatisfying,
   minSatisfying,
-  filter,
+  parse,
+  satisfies,
+  validRange,
 } from '../lib/specifier.js';
+import { cross } from './fixture.js';
 
 const SPECIFIERS = [
   '~=2.0',

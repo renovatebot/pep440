@@ -51,7 +51,7 @@ describe('compare(version, other)', () => {
   ].forEach(([left, op, right, expected]) => {
     it(`returns ${expected} for '${left}' ${op} '${right}'`, () => {
       // TODO: fix me?
-      // eslint-disable-next-line import-x/namespace
+      // oxlint-disable-next-line import/namespace
       expect(operator[op](left, right)).toBe(expected);
     });
   });
