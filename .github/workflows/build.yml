@@ -38,7 +38,7 @@ jobs:
   test:
     needs:
       - setup
-    name: ${{ matrix.node-version == 22 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
+    name: ${{ matrix.node-version == 24 && format('test ({0})', matrix.os) || format('test ({0}, node-{1})', matrix.os, matrix.node-version) }}
     runs-on: ${{ matrix.os }}
 
     # tests shouldn't need more time
@@ -54,11 +54,11 @@ jobs:
           - macos-latest
           - windows-latest
         node-version:
-          - 22
           - 24
+          - 26
 
     env:
-      coverage: ${{ matrix.os == 'ubuntu-latest' && matrix.node-version == 22 }}
+      coverage: ${{ matrix.os == 'ubuntu-latest' && matrix.node-version == 24 }}
 
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0

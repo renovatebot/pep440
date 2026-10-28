@@ -39,7 +39,7 @@
     "@containerbase/eslint-plugin": "3.0.0",
     "@containerbase/semantic-release-pnpm": "1.4.3",
     "@eslint/js": "10.0.1",
-    "@tsconfig/node22": "22.0.6",
+    "@tsconfig/node24": "24.0.5",
     "@types/eslint-config-prettier": "6.11.3",
     "@types/node": "22.20.5",
     "@vitest/coverage-v8": "^4.1.5",
@@ -64,7 +64,7 @@
   },
   "packageManager": "pnpm@11.28.6",
   "engines": {
-    "node": "^22.11.0 || >=24.10.0",
+    "node": ">=24.10.0",
     "pnpm": ">=10.0.0"
   }
 }
