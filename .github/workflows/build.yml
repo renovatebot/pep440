@@ -3,8 +3,9 @@ name: build
 on:
   pull_request:
   push:
-    branches-ignore:
-      - gh-readonly-queue/**
+    branches:
+      - main
+      - maint/**
 
   workflow_dispatch:
     inputs:
@@ -63,6 +64,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          persist-credentials: false
           fetch-depth: 10 # required for coverage
           show-progress: false
           filter: blob:none # we don't need all blobs
@@ -79,11 +81,12 @@ jobs:
         run: |
           git config --global core.autocrlf false
           git config --global core.symlinks true
-          echo 'Node $(node --version)'
-          echo 'pnpm $(pnpm --version)'
+          echo "Node $(node --version)"
+          echo "pnpm $(pnpm --version)"
 
       - name: Run tests
-        run: pnpm vitest --coverage ${{ env.coverage }} --logHeapUsage
+        shell: bash
+        run: pnpm vitest --coverage "${coverage}" --logHeapUsage
 
       - name: Upload coverage
         if: env.coverage == 'true' && github.event_name != 'merge_group' && !cancelled()
@@ -143,9 +146,10 @@ jobs:
       issues: write
 
     steps:
-      # full checkout for semantic-release
+      # full checkout for semantic-release, which pushes with its own token
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          persist-credentials: false
           fetch-depth: 0
           show-progress: false
           filter: blob:none # we don't need all blobs
@@ -157,8 +161,9 @@ jobs:
 
       - name: semantic-release
         run: |
-          pnpm semantic-release --dry-run ${{env.DRY_RUN}} --ci ${{env.DRY_RUN != 'true'}}
+          pnpm semantic-release --dry-run "${DRY_RUN}" --ci "${CI_MODE}"
         env:
+          CI_MODE: ${{ env.DRY_RUN != 'true' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # Catch-all required check
