@@ -42,9 +42,7 @@ describe('explain(version).public', () => {
     ['1!1.0rc4+deadbeef', '1!1.0rc4'],
     ['1!1.0.post5+deadbeef', '1!1.0.post5'],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).public).toBe(expected);
     });
   });
@@ -82,9 +80,7 @@ describe('explain(version).base_version', () => {
     ['1!1.0rc4+deadbeef', '1!1.0'],
     ['1!1.0.post5+deadbeef', '1!1.0'],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).base_version).toBe(expected);
     });
   });
@@ -122,9 +118,7 @@ describe('explain(version).epoch', () => {
     ['1!1.0rc4+deadbeef', 1],
     ['1!1.0.post5+deadbeef', 1],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).epoch).toBe(expected);
     });
   });
@@ -162,9 +156,7 @@ describe('explain(version).release', () => {
     ['1!1.0rc4+deadbeef', [1, 0]],
     ['1!1.0.post5+deadbeef', [1, 0]],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).release).toEqual(expected);
     });
   });
@@ -202,9 +194,7 @@ describe('explain(version).local', () => {
     ['1!1.0rc4+deadbeef', 'deadbeef'],
     ['1!1.0.post5+deadbeef', 'deadbeef'],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).local).toBe(expected);
     });
   });
@@ -242,9 +232,7 @@ describe('explain(version).pre', () => {
     ['1!1.0rc4+deadbeef', ['rc', 4]],
     ['1!1.0.post5+deadbeef', null],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).pre).toEqual(expected);
     });
   });
@@ -275,9 +263,7 @@ describe('explain(version).is_prerelease', () => {
     ['1.0.post1', false],
     ['1.0.post1+dev', false],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).is_prerelease).toBe(expected);
     });
   });
@@ -315,9 +301,7 @@ describe('explain(version).dev', () => {
     ['1!1.0rc4+deadbeef', null],
     ['1!1.0.post5+deadbeef', null],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).dev).toBe(expected);
     });
   });
@@ -355,9 +339,7 @@ describe('explain(version).is_devrelease', () => {
     ['1!1.0rc4+deadbeef', false],
     ['1!1.0.post5+deadbeef', false],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).is_devrelease).toBe(expected);
     });
   });
@@ -395,9 +377,7 @@ describe('explain(version).post', () => {
     ['1!1.0rc4+deadbeef', null],
     ['1!1.0.post5+deadbeef', 5],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).post).toBe(expected);
     });
   });
@@ -411,9 +391,7 @@ describe('explain(version).is_postrelease', () => {
     ['1.0.post1.dev1', true],
     ['1.0.post1', true],
   ].forEach(([version, expected]) => {
-    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(
-      version,
-    )}`, () => {
+    it(`returns ${JSON.stringify(expected)} for ${JSON.stringify(version)}`, () => {
       expect(explain(version).is_postrelease).toBe(expected);
     });
   });

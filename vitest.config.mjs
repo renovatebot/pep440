@@ -20,9 +20,7 @@ export default defineConfig(() => {
       coverage: {
         ignoreEmptyLines: true,
         provider: 'v8',
-        reporter: ci
-          ? ['text-summary', 'cobertura']
-          : ['text-summary', 'html', 'cobertura'],
+        reporter: ci ? ['text-summary', 'cobertura'] : ['text-summary', 'html', 'cobertura'],
         enabled: ci ? true : undefined,
         include: ['lib/**/*.js'],
         watermarks: {
