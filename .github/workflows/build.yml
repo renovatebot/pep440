@@ -121,9 +121,9 @@ jobs:
 
       - name: Lint
         run: |
-          pnpm eslint -f gha
+          pnpm oxlint --format github
           pnpm markdown-lint
-          pnpm prettier
+          pnpm oxfmt
 
       # - name: Type check
       #   run: pnpm type-check

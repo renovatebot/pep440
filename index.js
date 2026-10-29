@@ -1,17 +1,16 @@
-import { valid, clean, explain, parse } from './lib/version.js';
+import { compare, eq, ge, gt, le, lt, ne, rcompare } from './lib/operator.js';
 
-import { lt, le, eq, ne, ge, gt, compare, rcompare } from './lib/operator.js';
+import { inc, major, minor, patch } from './lib/semantic.js';
 
 import {
+  RANGE_PATTERN,
   filter,
   maxSatisfying,
   minSatisfying,
-  RANGE_PATTERN,
   satisfies,
   validRange,
 } from './lib/specifier.js';
-
-import { major, minor, patch, inc } from './lib/semantic.js';
+import { clean, explain, parse, valid } from './lib/version.js';
 
 export {
   // version

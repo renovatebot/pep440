@@ -1,4 +1,4 @@
-import { major, minor, patch, inc } from '../index.js';
+import { inc, major, minor, patch } from '../index.js';
 
 describe('major(version)', () => {
   it('returns correct value', () => {
