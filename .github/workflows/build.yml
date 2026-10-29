@@ -117,6 +117,10 @@ jobs:
 
     # lint shouldn't need more than 10 min
     timeout-minutes: 15
+    env:
+      # node and pnpm come from the setup action, so `mise exec` must not
+      # install them again
+      MISE_EXEC_AUTO_INSTALL: 'false'
 
     steps:
       - name: ⚙️ Setup
@@ -127,6 +131,19 @@ jobs:
           pnpm oxlint --format github
           pnpm markdown-lint
           pnpm oxfmt
+
+      - name: Install the workflow linters
+        uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d # v5.2.4
+        with:
+          install_args: jactionlint shellcheck zizmor
+
+      - name: Check workflow files
+        run: mise exec -- jactionlint --color
+
+      - name: Run zizmor
+        run: mise exec -- zizmor --format github .github/
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       # - name: Type check
       #   run: pnpm type-check
