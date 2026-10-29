@@ -314,9 +314,7 @@ describe('inc(version, release)', () => {
     epochTestCase[0] = `1!${epochTestCase[0]}`;
     epochTestCase[3] = `1!${epochTestCase[3]}`;
     it(`handles incrementing ${epochTestCase[0]} using ${epochTestCase[1]} to ${epochTestCase[3]}`, () =>
-      expect(inc(epochTestCase[0], epochTestCase[1], epochTestCase[2])).toBe(
-        epochTestCase[3],
-      ));
+      expect(inc(epochTestCase[0], epochTestCase[1], epochTestCase[2])).toBe(epochTestCase[3]));
   });
 
   // Invalid inputs.

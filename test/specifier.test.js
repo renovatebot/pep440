@@ -468,9 +468,7 @@ describe('satisfies([versions], specifier, {prereleases})', () => {
       [spec, version, !result, !result],
     ],
   ).forEach(([spec, version, prereleases, expected]) => {
-    it(`returns ${expected} for ${JSON.stringify(
-      version,
-    )} satisfies ${JSON.stringify(
+    it(`returns ${expected} for ${JSON.stringify(version)} satisfies ${JSON.stringify(
       spec,
     )} when prereleases=${prereleases}`, () => {
       expect(satisfies(version, spec, { prereleases })).toBe(expected);
@@ -511,9 +509,7 @@ describe('filter([versions], specifier, {prereleases})', () => {
       const filtered = filter(...args);
       expect(filtered).toEqual(expected);
       expect(minSatisfying(...args)).toEqual(filtered[0] || null);
-      expect(maxSatisfying(...args)).toEqual(
-        filtered[filtered.length - 1] || null,
-      );
+      expect(maxSatisfying(...args)).toEqual(filtered[filtered.length - 1] || null);
     });
   });
 });

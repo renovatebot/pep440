@@ -153,9 +153,7 @@ describe('clean(version)', () => {
     ['1.0c1', '1.0rc1'],
   ].forEach((tuple) => {
     const [version, normalized] = tuple;
-    it(`normalizes ${JSON.stringify(version)} to ${JSON.stringify(
-      normalized,
-    )}`, () => {
+    it(`normalizes ${JSON.stringify(version)} to ${JSON.stringify(normalized)}`, () => {
       expect(clean(version)).toEqual(normalized);
     });
   });

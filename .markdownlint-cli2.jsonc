@@ -21,11 +21,5 @@
   // "globs": ["**/*.md"],
 
   // Define glob expressions to ignore
-  "ignores": [
-    "**/node_modules/**",
-    "**/TestResults/**",
-    "**/bin/**",
-    "**/obj/**",
-    "coverage/",
-  ],
+  "ignores": ["**/node_modules/**", "**/TestResults/**", "**/bin/**", "**/obj/**", "coverage/"],
 }
