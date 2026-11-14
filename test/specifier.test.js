@@ -293,11 +293,20 @@ describe('satisfies(version, specifier)', () => {
       ['2.0.1', '>2'],
       ['2.1.post1', '>2'],
       ['2.1+local.version', '>2'],
+      ['2.0', '>2.0rc1'],
+      ['2.0', '>2.0.dev1'],
+      ['2.0rc2', '>2.0rc1'],
+      ['1.0.post2', '>1.0.post1'],
+      ['1!1.0', '>1.0'],
 
       // Test the less than operation
       ['1', '<2'],
       ['2.0', '<2.1'],
       ['2.0.dev0', '<2.1'],
+      ['2.0', '<2.0.post1'],
+      ['2.0b1', '<2.0rc1'],
+      ['2.0.dev1', '<2.0rc1'],
+      ['1.0', '<1!1.0'],
 
       // Test the compatibility operation
       ['1', '~=1.0'],
@@ -394,8 +403,11 @@ describe('satisfies(version, specifier)', () => {
       ['2.0.post1', '>2'],
       ['2.0.post1.dev1', '>2'],
       ['2.0+local.version', '>2'],
+      ['2.0.post1', '>2.0rc1'],
+      ['2.0+local.version', '>2.0rc1'],
 
       // Test the less than operation
+      ['2.0rc1', '<2.0.post1'],
       ['2.0.dev1', '<2'],
       ['2.0a1', '<2'],
       ['2.0a1.post1', '<2'],
