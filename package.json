@@ -38,7 +38,7 @@
   "devDependencies": {
     "@containerbase/oxlint-plugin": "1.1.0",
     "@containerbase/semantic-release-pnpm": "1.4.4",
-    "@tsconfig/node24": "24.0.5",
+    "@tsconfig/node24": "24.0.6",
     "@types/node": "24.19.2",
     "@vitest/coverage-v8": "^5.0.0",
     "conventional-changelog-conventionalcommits": "9.3.1",
